@@ -1,11 +1,12 @@
 {
     "name": "guimizhizhu",
-    "version": "0.0.0",
+    "version": "1.0.5",
     "private": true,
+    "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "run-p type-check build-only",
-        "preview": "vite preview",
+        "build": "node zzzVersion.cjs && run-p type-check build-only",
+        "preview": "vite preview ",
         "build-only": "vite build",
         "type-check": "vue-tsc --noEmit"
     },
@@ -21,7 +22,7 @@
         "yz-calendar": "^1.4.0"
     },
     "devDependencies": {
-        "@types/node": "^18.14.2",
+        "@types/node": "^18.15.9",
         "@vitejs/plugin-vue": "^4.0.0",
         "@vue/tsconfig": "^0.1.3",
         "less": "^4.1.3",

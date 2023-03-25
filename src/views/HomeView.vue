@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { checkMain, switchArray } from "@/utils/checkdata"
 
-import { useDaDataBase } from "@/utils/webDb";
-import { reactive } from "vue";
+import { updateDataBase, useDataBase } from "@/utils/webDb";
 
 import calendar from "yz-calendar";
 // console.log(calendar.solar2lunar(2021, 3, 21));
 
+
+
+
 // 使用数据库
-const database: any = useDaDataBase();
+const database: any = useDataBase();
 // 获取指定的表
 const ways = database.ways;
 const organization = database.organization
@@ -89,9 +91,15 @@ const enter = (row: any, column: any, cell: any, event: any) => {
     console.log(event);
 }
 
+const update = async () => {
+    updateDataBase()
+    // location.reload();
+}
+
 </script>
 
 <template>
+    <el-button type="primary" @click="update()">更新数据库</el-button>
     <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="alldata"
         :span-method="spanMethod">
         <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">

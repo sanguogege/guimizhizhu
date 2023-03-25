@@ -1,18 +1,34 @@
+import { inject } from "vue";
 import { createRxDatabase, addRxPlugin } from "rxdb";
 import { RxDBMigrationPlugin } from "rxdb/plugins/migration";
 import { getRxStorageDexie } from "rxdb/plugins/storage-dexie";
+import { removeRxDatabase } from "rxdb";
 
-import { inject } from "vue";
 import schemas from "./schemas";
 import { all } from "@/assets/data/";
+import isNewData from "@/utils/getversion";
 
 const KEY_DATABASE = Symbol("database");
 
 addRxPlugin(RxDBMigrationPlugin);
 
-const useDaDataBase = () => {
+const useDataBase = () => {
 	return inject(KEY_DATABASE);
 };
+
+const updateDataBase = async () => {
+	console.log("删除数据库");
+	await removeRxDatabase("guimizhizhu", getRxStorageDexie());
+	creatDataBase();
+	localStorage.setItem("version", isNewData.version);
+};
+
+if (isNewData.isNewData) {
+	alert("数据有更新");
+	updateDataBase();
+} else {
+	console.log("没有更新");
+}
 
 const creatDataBase = async () => {
 	const myDatabase = await createRxDatabase({
@@ -38,4 +54,4 @@ const creatDataBase = async () => {
 	};
 };
 
-export { creatDataBase, useDaDataBase };
+export { creatDataBase, useDataBase, updateDataBase };
