@@ -1,0 +1,115 @@
+:root {
+    --yonganzhihe-bg: rgba(53, 62, 79, 1);
+    --hundunhai-bg: #2f74b9;
+    --zhishihuangye-bg: #538232;
+    --yuanbao-bg: #7030a0;
+    --shixuzhiguo-bg: #bf0200;
+    --zaihuozhicheng-bg: #156c59;
+    --muchao-bg: #057c08;
+    --anyingshijie-bg: #bf8e03;
+    --primary-color: var(--el-color-white);
+}
+
+.main {
+    --el-table-row-hover-bg-color: none;
+}
+
+.main.el-table .cell {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.main.el-table .el-table__cell {
+    padding: 0;
+}
+
+.yonganzhihe {
+    background-color: var(--yonganzhihe-bg);
+    color: var(--primary-color) !important;
+}
+
+.el-table__body tr:hover>td.el-table__cell.yonganzhihe {
+    background-color: var(--yonganzhihe-bg);
+    color: var(--primary-color) !important;
+}
+
+.hundunhai {
+    background-color: var(--hundunhai-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.hundunhai {
+    background-color: var(--hundunhai-bg);
+    color: var(--primary-color);
+}
+
+.zhishihuangye {
+    background-color: var(--zhishihuangye-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.zhishihuangye {
+    background-color: var(--zhishihuangye-bg);
+    color: var(--primary-color);
+}
+
+.yuanbao {
+    background-color: var(--yuanbao-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.yuanbao {
+    background-color: var(--yuanbao-bg);
+    color: var(--primary-color);
+}
+
+
+.yuanbao:hover {
+    background-color: var(--yuanbao-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.yuanbao:hover {
+    background-color: var(--yuanbao-bg);
+    color: var(--primary-color);
+}
+
+.shixuzhiguo {
+    background-color: var(--shixuzhiguo-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.shixuzhiguo {
+    background-color: var(--shixuzhiguo-bg);
+    color: var(--primary-color);
+}
+
+.zaihuozhicheng {
+    background-color: var(--zaihuozhicheng-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.zaihuozhicheng {
+    background-color: var(--zaihuozhicheng-bg);
+    color: var(--primary-color);
+}
+
+.muchao {
+    background-color: var(--muchao-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.muchao {
+    background-color: var(--muchao-bg);
+    color: var(--primary-color);
+}
+
+.anyingshijie {
+    background-color: var(--anyingshijie-bg);
+    color: var(--primary-color);
+}
+
+.el-table__body tr:hover>td.el-table__cell.anyingshijie {
+    background-color: var(--anyingshijie-bg);
+    color: var(--primary-color);
+}
