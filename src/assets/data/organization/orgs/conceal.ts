@@ -3,7 +3,7 @@ import { orgType } from "@/assets/data/enum";
 
 const org: organizations = [
 	{
-		name: "极光会",
+		name: "极光会1",
 		top: "远古太阳神",
 		way: ["miqiren"],
 		member: [""],

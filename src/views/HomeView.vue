@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { checkMain, switchArray } from "@/utils/checkdata"
 
-import { updateDataBase, useDataBase } from "@/utils/webDb";
+import { creatDataBase, useDataBase } from "@/utils/webDb";
+
+import { ElMessage } from 'element-plus'
 
 import calendar from "yz-calendar";
 // console.log(calendar.solar2lunar(2021, 3, 21));
@@ -28,8 +30,10 @@ const data = switchArray(waysDocument, true)
 const data2 = switchArray(organizationDocument)
 const data3 = switchArray(yuanzhiDocument)
 
-// 综合处理，合并。
+// 综合处理，合并。# TODO 合并处理也需要存入数据库
 const alldata = checkMain(data, data2, data3)
+
+
 
 console.log(alldata);
 
@@ -92,14 +96,17 @@ const enter = (row: any, column: any, cell: any, event: any) => {
 }
 
 const update = async () => {
-    updateDataBase()
-    // location.reload();
+    await database.remove();
+    creatDataBase()
+    setTimeout(function () {
+        location.reload()
+    }, 2000)
 }
 
 </script>
 
 <template>
-    <el-button type="primary" @click="update()">更新数据库</el-button>
+    <el-button type="primary" @click.once="update()">更新数据库</el-button>
     <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="alldata"
         :span-method="spanMethod">
         <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
