@@ -6,7 +6,7 @@ export default {
 	component: layout,
 	children: [
 		{
-			path: "/sequence",
+			path: "/sequence/:type/:name?",
 			name: "sequence",
 			component: () => import("@/views/sequence/index.vue"),
 			meta: {},

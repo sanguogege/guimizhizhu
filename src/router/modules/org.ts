@@ -6,8 +6,8 @@ export default {
 	component: layout,
 	children: [
 		{
-			path: "/org",
-			name: "org",
+			path: "/orgs/:id",
+			name: "orgs",
 			component: () => import("@/views/orgs/index.vue"),
 			meta: {},
 		},

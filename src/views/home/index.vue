@@ -75,21 +75,7 @@ const cellClassSet = ({ row, columnIndex }: any) => {
     }
 }
 
-const enter = (row: any, column: any, cell: any) => {
-    if (!!column.no && column.no != 15) {
-        const name = cell.getElementsByClassName("cell").innerText;
-        if (column.label.includes("序列")) {
 
-        } else if (column.label.includes("组织")) {
-
-        } else if (column.label.includes("塔罗牌")) {
-
-        }
-        console.log(column.label);
-
-        console.log();
-    }
-}
 onMounted(() => {
     // const line = gsap.timeline();
     // line.from(".main ", { duration: 4, ease: "power2", opacity: 0, y: -1600 })
@@ -98,29 +84,88 @@ onMounted(() => {
 </script>
 
 <template>
-    <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="dataAll"
-        :span-method="spanMethod">
+    <el-table class="main" :cell-class-name="cellClassSet" :border="true" :data="dataAll" :span-method="spanMethod">
         <el-table-column class="main_box" align="center" label="诡秘之主序列途径一览">
             <el-table-column width="140" align="center" label="序列权柄">
                 <template #default="scope">
-                    <homelink :data="scope.row.yuan"></homelink>
+                    <router-link :to="'/sequence/' + scope.row.name">{{ scope.row.power }}</router-link>
                 </template>
             </el-table-column>
-            <el-table-column width="80" align="center" label="序列九" prop="9" />
-            <el-table-column width="80" align="center" label="序列八" prop="8" />
-            <el-table-column width="80" align="center" label="序列七" prop="7" />
-            <el-table-column width="80" align="center" label="序列六" prop="6" />
-            <el-table-column width="80" align="center" label="序列五" prop="5" />
-            <el-table-column width="80" align="center" label="序列四" prop="4" />
-            <el-table-column width="80" align="center" label="序列三" prop="3" />
-            <el-table-column width="80" align="center" label="序列二" prop="2" />
-            <el-table-column width="80" align="center" label="序列一" prop="1" />
-            <el-table-column width="80" align="center" label="序列零" prop="0" />
-            <el-table-column width="140" align="center" prop="org" label="主要途径组织" />
-            <el-table-column width="70" align="center" prop="taluopai" label="塔罗牌" />
-            <el-table-column width="140" align="center" prop="top" label="现存高位者" />
-            <el-table-column width="80" align="center" prop="yuan.name" label="源质" />
-            <el-table-column align="center" prop="yuan.title" label="旧日称号" />
+            <el-table-column width="80" align="center" label="序列九" prop="9">
+                <template #default="scope">
+                    <homelink :data="scope.row[9]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列八" prop="8">
+                <template #default="scope">
+                    <homelink :data="scope.row[8]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列七" prop="7">
+                <template #default="scope">
+                    <homelink :data="scope.row[7]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列六" prop="6">
+                <template #default="scope">
+                    <homelink :data="scope.row[6]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列五" prop="5">
+                <template #default="scope">
+                    <homelink :data="scope.row[5]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列四" prop="4">
+                <template #default="scope">
+                    <homelink :data="scope.row[4]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列三" prop="3">
+                <template #default="scope">
+                    <homelink :data="scope.row[3]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列二" prop="2">
+                <template #default="scope">
+                    <homelink :data="scope.row[2]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列一" prop="1">
+                <template #default="scope">
+                    <homelink :data="scope.row[1]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" label="序列零" prop="0">
+                <template #default="scope">
+                    <homelink :data="scope.row[0]"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="140" align="center" prop="org" label="主要途径组织">
+                <template #default="scope">
+                    <homelink :org="scope.row.org"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" prop="taluopai" label="塔罗牌">
+                <template #default="scope">
+                    <homelink :taluopai="scope.row.taluopai"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="140" align="center" prop="top" label="现存高位者">
+                <template #default="scope">
+                    <homelink :role="scope.row.top"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column width="80" align="center" prop="yuan.name" label="源质">
+                <template #default="scope">
+                    <homelink :yuan="scope.row.yuan.name"></homelink>
+                </template>
+            </el-table-column>
+            <el-table-column align="center" prop="yuan.title" label="旧日称号">
+                <template #default="scope">
+                    <homelink :yuan="scope.row.yuan.title"></homelink>
+                </template>
+            </el-table-column>
         </el-table-column>
     </el-table>
 </template>

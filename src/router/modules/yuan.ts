@@ -6,7 +6,7 @@ export default {
 	component: layout,
 	children: [
 		{
-			path: "/yuan",
+			path: "/yuan/:id",
 			name: "yuan",
 			component: () => import("@/views/yuan/index.vue"),
 			meta: {},

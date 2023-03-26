@@ -58,6 +58,10 @@ const properties = {
 					type: "number",
 					default: 0,
 				},
+				type: {
+					type: "string",
+					default: "",
+				},
 			},
 		},
 		8: {
@@ -70,6 +74,10 @@ const properties = {
 				num: {
 					type: "number",
 					default: 0,
+				},
+				type: {
+					type: "string",
+					default: "",
 				},
 			},
 		},
@@ -84,6 +92,10 @@ const properties = {
 					type: "number",
 					default: 0,
 				},
+				type: {
+					type: "string",
+					default: "",
+				},
 			},
 		},
 		6: {
@@ -96,6 +108,10 @@ const properties = {
 				num: {
 					type: "number",
 					default: 0,
+				},
+				type: {
+					type: "string",
+					default: "",
 				},
 			},
 		},
@@ -110,6 +126,10 @@ const properties = {
 					type: "number",
 					default: 0,
 				},
+				type: {
+					type: "string",
+					default: "",
+				},
 			},
 		},
 		4: {
@@ -122,6 +142,10 @@ const properties = {
 				num: {
 					type: "number",
 					default: 0,
+				},
+				type: {
+					type: "string",
+					default: "",
 				},
 			},
 		},
@@ -136,6 +160,10 @@ const properties = {
 					type: "number",
 					default: 0,
 				},
+				type: {
+					type: "string",
+					default: "",
+				},
 			},
 		},
 		2: {
@@ -148,6 +176,10 @@ const properties = {
 				num: {
 					type: "number",
 					default: 0,
+				},
+				type: {
+					type: "string",
+					default: "",
 				},
 			},
 		},
@@ -162,6 +194,10 @@ const properties = {
 					type: "number",
 					default: 0,
 				},
+				type: {
+					type: "string",
+					default: "",
+				},
 			},
 		},
 		0: {
@@ -174,6 +210,10 @@ const properties = {
 				num: {
 					type: "number",
 					default: 0,
+				},
+				type: {
+					type: "string",
+					default: "",
 				},
 			},
 		},

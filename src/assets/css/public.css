@@ -17,7 +17,8 @@
 }
 
 .main.el-table .cell {
-    padding: 0;
+    height: 100%;
+    padding: 4px;
     cursor: pointer;
 }
 
@@ -26,100 +27,77 @@
     transition: all 0.4s ease-in-out !important;
 }
 
-.yonganzhihe {
-    background-color: var(--yonganzhihe-bg);
-    color: var(--primary-color);
-}
 
+.yonganzhihe,
 .el-table__body tr:hover>td.el-table__cell.yonganzhihe {
     background-color: var(--yonganzhihe-bg);
-    color: var(--primary-color);
 }
 
-.hundunhai {
-    background-color: var(--hundunhai-bg);
-    color: var(--primary-color);
-}
 
+.hundunhai,
 .el-table__body tr:hover>td.el-table__cell.hundunhai {
     background-color: var(--hundunhai-bg);
-    color: var(--primary-color);
 }
 
 .zhishihuangye {
     background-color: var(--zhishihuangye-bg);
-    color: var(--primary-color);
 }
 
+.zhishihuangye,
 .el-table__body tr:hover>td.el-table__cell.zhishihuangye {
     background-color: var(--zhishihuangye-bg);
-    color: var(--primary-color);
 }
 
-.yuanbao {
-    background-color: var(--yuanbao-bg);
-    color: var(--primary-color);
-}
-
+.yuanbao,
 .el-table__body tr:hover>td.el-table__cell.yuanbao {
     background-color: var(--yuanbao-bg);
-    color: var(--primary-color);
 }
 
 
-.yuanbao:hover {
-    background-color: var(--yuanbao-bg);
-    color: var(--primary-color);
-}
-
-.el-table__body tr:hover>td.el-table__cell.yuanbao:hover {
-    background-color: var(--yuanbao-bg);
-    color: var(--primary-color);
-}
-
-.shixuzhiguo {
-    background-color: var(--shixuzhiguo-bg);
-    color: var(--primary-color);
-}
-
+.shixuzhiguo,
 .el-table__body tr:hover>td.el-table__cell.shixuzhiguo {
     background-color: var(--shixuzhiguo-bg);
-    color: var(--primary-color);
 }
 
-.zaihuozhicheng {
-    background-color: var(--zaihuozhicheng-bg);
-    color: var(--primary-color);
-}
 
+.zaihuozhicheng,
 .el-table__body tr:hover>td.el-table__cell.zaihuozhicheng {
     background-color: var(--zaihuozhicheng-bg);
-    color: var(--primary-color);
 }
 
-.muchao {
-    background-color: var(--muchao-bg);
-    color: var(--primary-color);
-}
 
+.muchao,
 .el-table__body tr:hover>td.el-table__cell.muchao {
     background-color: var(--muchao-bg);
-    color: var(--primary-color);
 }
 
-.anyingshijie {
-    background-color: var(--anyingshijie-bg);
-    color: var(--primary-color);
-}
-
+.anyingshijie,
 .el-table__body tr:hover>td.el-table__cell.anyingshijie {
     background-color: var(--anyingshijie-bg);
     color: var(--primary-color);
 }
 
 
-.el-table__body .mycellhover:hover {
-    color: #9e0202 !important;
+.yonganzhihe a,
+.hundunhai a,
+.zhishihuangye a,
+.yuanbao a,
+.shixuzhiguo a,
+.anyingshijie a,
+.zaihuozhicheng a,
+.anyingshijie a,
+.muchao a,
+.zaihuozhicheng a {
+    color: var(--primary-color);
+}
+
+
+
+.el-table__body .el-table__cell:hover {
     font-weight: bold;
     background-color: #25ff08 !important;
+}
+
+.el-table__body .el-table__cell:hover a {
+    color: #240808;
 }

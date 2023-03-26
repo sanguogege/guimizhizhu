@@ -1,7 +1,11 @@
 const checkString = (name: string) => {
 	const nameArray: Array<string> = ["皇室", "家族"];
-	for (const str of nameArray) {
-		return name.replace(str, "");
+	for (let key = 0; key < nameArray.length; key++) {
+		if (name.indexOf(nameArray[key]) != -1) {
+			return name.replace(nameArray[key], "");
+		} else if (key == nameArray.length - 1) {
+			return name;
+		}
 	}
 };
 
@@ -27,7 +31,7 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 				if (!way.org) {
 					way.org = org.name;
 				} else {
-					way.org = checkString(org.name + " / " + way.org);
+					way.org = checkString(org.name + " /" + way.org);
 				}
 			}
 		});
@@ -44,6 +48,7 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 			way[cur.num] = {
 				name: cur.name,
 				num: cur.num,
+				type: way.name,
 			};
 		});
 
