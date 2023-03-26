@@ -163,7 +163,7 @@ onMounted(() => {
             </el-table-column>
             <el-table-column align="center" prop="yuan.title" label="旧日称号">
                 <template #default="scope">
-                    <homelink :yuan="scope.row.yuan.title"></homelink>
+                    <homelink :yuan="scope.row.yuan"></homelink>
                 </template>
             </el-table-column>
         </el-table-column>

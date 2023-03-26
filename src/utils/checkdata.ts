@@ -31,7 +31,7 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 				if (!way.org) {
 					way.org = org.name;
 				} else {
-					way.org = checkString(org.name + " /" + way.org);
+					way.org = checkString(org.name + "/" + way.org);
 				}
 			}
 		});
