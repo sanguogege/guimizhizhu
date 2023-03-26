@@ -63,9 +63,13 @@ const cellClassSet = ({ row, columnIndex }: any) => {
         const target = bgSet[row.yuan.name];
         if (row.yuan.name == target.string) {
             if (target.column.includes(columnIndex)) {
-                return target.name;
+                return target.name + " mycellhover";
+            } else {
+                return "mycellhover";
             }
         }
+    } else {
+        return "mycellhover";
     }
 }
 
@@ -81,7 +85,7 @@ const enter = (row: any, column: any, cell: any, event: any) => {
 <template>
     <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="dataAll"
         :span-method="spanMethod">
-        <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
+        <el-table-column class="main_box" align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
             <el-table-column width="140" align="center" prop="power" label="序列权柄" />
             <el-table-column width="80" align="center" label="序列九" prop="9" />
             <el-table-column width="80" align="center" label="序列八" prop="8" />
@@ -97,7 +101,17 @@ const enter = (row: any, column: any, cell: any, event: any) => {
             <el-table-column width="70" align="center" prop="taluopai" label="塔罗牌" />
             <el-table-column width="140" align="center" prop="top" label="现存高位者" />
             <el-table-column width="80" align="center" prop="yuan.name" label="源质" />
-            <el-table-column width="160" align="center" prop="yuan.title" label="旧日称号" />
+            <el-table-column align="center" prop="yuan.title" label="旧日称号" />
         </el-table-column>
     </el-table>
 </template>
+<style scoped>
+.main {
+    width: 1600px;
+    margin: auto;
+}
+
+.main_box {
+    width: 100%;
+}
+</style>

@@ -113,3 +113,13 @@
     background-color: var(--anyingshijie-bg);
     color: var(--primary-color);
 }
+
+.el-table__body .mycellhover {
+    transition: all 0.4s ease-in-out !important;
+}
+
+.el-table__body .mycellhover:hover {
+    color: #9e0202 !important;
+    font-weight: bold;
+    background-color: #25ff08 !important;
+}
