@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from 'vue-router';
 import { creatDataBase, useDataBase } from "@/utils/webDb";
 const database: any = useDataBase();
 
-
 const update = async () => {
     await database.remove();
     creatDataBase()
