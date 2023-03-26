@@ -3,7 +3,7 @@ import { orgType } from "@/assets/data/enum";
 
 const org: organizations = [
 	{
-		name: "极光会1",
+		name: "极光会",
 		top: "远古太阳神",
 		way: ["miqiren"],
 		member: [""],
@@ -154,22 +154,6 @@ const org: organizations = [
 		shiji: [],
 		type: orgType.conceal,
 		nickname: "22",
-		born: "",
-		other: "",
-		now: "",
-		childorg: "",
-		partway: "",
-		tip: "",
-		ismian: true,
-	},
-	{
-		name: "玫瑰学派",
-		top: "莉莉丝",
-		way: ["yaoshi", "qiufan"],
-		member: [""],
-		shiji: [],
-		type: orgType.conceal,
-		nickname: "",
 		born: "",
 		other: "",
 		now: "",

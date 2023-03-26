@@ -13,19 +13,16 @@ import calendar from "yz-calendar";
 
 // 使用数据库
 const database: any = useDataBase();
+
 // 获取指定的表
-// const ways = database.ways;
-// const organization = database.organization
-// const yuanzhi = database.yuanzhi
+const gather = database.gather;
+
 // // 获取指定表的数据list
-// const waysDocument = await ways.find().exec();
-// const organizationDocument = await organization.find().exec();
-// const yuanzhiDocument = await yuanzhi.find().exec();
+const gatherDocument = await database.gather.find().exec();
 
-// // const attachments = yuanzhiDocument.allAttachments();
-// // console.log(attachments);
+const dataAll = switchArray(gatherDocument, true);
 
-// // 把数据库list转化成数据格式
+console.log(dataAll);
 // const data = switchArray(waysDocument, true)
 // const data2 = switchArray(organizationDocument)
 // const data3 = switchArray(yuanzhiDocument)
@@ -48,16 +45,16 @@ const colzhizhu = {
 const spanMethod = ({ row,
     column }: any) => {
     if (column.label == "源质") {
-        if (colyuanzhi.name != row.yuanzhi.name) {
-            colyuanzhi.name = row.yuanzhi.name
+        if (colyuanzhi.name != row.yuan.name) {
+            colyuanzhi.name = row.yuan.name
             return [row.colspan, 1]
         } else {
             return [0, 0]
         }
     }
     if (column.label == "旧日称号") {
-        if (colzhizhu.name != row.yuanzhi.title) {
-            colzhizhu.name = row.yuanzhi.title
+        if (colzhizhu.name != row.yuan.title) {
+            colzhizhu.name = row.yuan.title
             return [row.colspan, 1]
         } else {
             return [0, 0]
@@ -77,9 +74,9 @@ const bgSet: any = {
 }
 
 const cellClassSet = ({ row, columnIndex }: any) => {
-    if (row.yuanzhi.name != "光之钥") {
-        const target = bgSet[row.yuanzhi.name];
-        if (row.yuanzhi.name == target.string) {
+    if (row.yuan.name != "光之钥") {
+        const target = bgSet[row.yuan.name];
+        if (row.yuan.name == target.string) {
             if (target.column.includes(columnIndex)) {
                 return target.name;
             }
@@ -106,25 +103,25 @@ const update = async () => {
 
 <template>
     <el-button type="primary" @click.once="update()">更新数据库</el-button>
-    <!-- <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="alldata"
-                    :span-method="spanMethod">
-                    <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
-                        <el-table-column width="140" align="center" prop="power" label="序列权柄" />
-                        <el-table-column width="80" align="center" label="序列九" prop="9.name" />
-                        <el-table-column width="80" align="center" label="序列八" prop="8.name" />
-                        <el-table-column width="80" align="center" label="序列七" prop="7.name" />
-                        <el-table-column width="80" align="center" label="序列六" prop="6.name" />
-                        <el-table-column width="80" align="center" label="序列五" prop="5.name" />
-                        <el-table-column width="80" align="center" label="序列四" prop="4.name" />
-                        <el-table-column width="80" align="center" label="序列三" prop="3.name" />
-                        <el-table-column width="80" align="center" label="序列二" prop="2.name" />
-                        <el-table-column width="80" align="center" label="序列一" prop="1.name" />
-                        <el-table-column width="80" align="center" label="序列零" prop="0.name" />
-                        <el-table-column width="140" align="center" prop="org" label="主要途径组织" />
-                        <el-table-column width="70" align="center" prop="taluopai" label="塔罗牌" />
-                        <el-table-column width="140" align="center" prop="top" label="现存高位者" />
-                        <el-table-column width="80" align="center" prop="yuanzhi.name" label="源质" />
-                        <el-table-column width="160" align="center" prop="yuanzhi.title" label="旧日称号" />
-                    </el-table-column>
-                </el-table> -->
+    <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="dataAll"
+        :span-method="spanMethod">
+        <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
+            <el-table-column width="140" align="center" prop="power" label="序列权柄" />
+            <el-table-column width="80" align="center" label="序列九" prop="9" />
+            <el-table-column width="80" align="center" label="序列八" prop="8" />
+            <el-table-column width="80" align="center" label="序列七" prop="7" />
+            <el-table-column width="80" align="center" label="序列六" prop="6" />
+            <el-table-column width="80" align="center" label="序列五" prop="5" />
+            <el-table-column width="80" align="center" label="序列四" prop="4" />
+            <el-table-column width="80" align="center" label="序列三" prop="3" />
+            <el-table-column width="80" align="center" label="序列二" prop="2" />
+            <el-table-column width="80" align="center" label="序列一" prop="1" />
+            <el-table-column width="80" align="center" label="序列零" prop="0" />
+            <el-table-column width="140" align="center" prop="org" label="主要途径组织" />
+            <el-table-column width="70" align="center" prop="taluopai" label="塔罗牌" />
+            <el-table-column width="140" align="center" prop="top" label="现存高位者" />
+            <el-table-column width="80" align="center" prop="yuan.name" label="源质" />
+            <el-table-column width="160" align="center" prop="yuan.title" label="旧日称号" />
+        </el-table-column>
+    </el-table>
 </template>

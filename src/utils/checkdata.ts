@@ -6,9 +6,8 @@ const checkString = (name: string) => {
 };
 
 const switchArray = (items: Array<any>, isSort: boolean = false) => {
-	const newArray: Array<any> = [];
-	items.forEach((item: any) => {
-		newArray.push(item.toMutableJSON());
+	const newArray: Array<any> = items.map((item: any) => {
+		return item.toMutableJSON();
 	});
 	if (isSort) {
 		return newArray.sort(orderBy);

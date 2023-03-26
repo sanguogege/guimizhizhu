@@ -28,7 +28,6 @@ const creatDataBase = async () => {
 		name: "guimizhizhu",
 		storage: getRxStorageDexie(),
 	});
-	console.log(schemas);
 	const schemasAdd = schemas.map(async (element: any) => {
 		await myDatabase.addCollections(element);
 	});
@@ -36,7 +35,6 @@ const creatDataBase = async () => {
 	await Promise.all(schemasAdd);
 
 	Object.values(myDatabase.collections).forEach((c: any) => {
-		console.log(all[c.name]);
 		c.bulkInsert(all[c.name]);
 	});
 
