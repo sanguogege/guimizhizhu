@@ -11,6 +11,4 @@ Object.keys(modules).forEach((key) => {
 	Schemas.push(modules[key].default);
 });
 
-console.log(Schemas);
-
 export default Schemas;

@@ -8,6 +8,4 @@ Object.keys(modules).forEach((key) => {
 	yuans.push(modules[key].default);
 });
 
-export default {
-	yuans: yuans,
-};
+export default { yuans };

@@ -21,7 +21,8 @@ function orderBy(a: any, b: any) {
 }
 
 const checkMain = (ways: any, orgs?: any, yuans?: any) => {
-	ways.map((way: any) => {
+	const newArray = JSON.parse(JSON.stringify(ways));
+	newArray.forEach((way: any) => {
 		orgs.forEach((org: any) => {
 			if (org.way.includes(way.name) && org.ismian) {
 				if (!way.org) {
@@ -48,7 +49,7 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 		return way;
 	});
 
-	return ways;
+	return newArray;
 };
 
 export { checkMain, switchArray };

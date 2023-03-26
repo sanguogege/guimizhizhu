@@ -13,4 +13,4 @@ Object.keys(modules).forEach((key) => {
 	orgs.push(...modules[key].default);
 });
 
-export default { orgs: orgs };
+export default { orgs };

@@ -8,6 +8,4 @@ Object.keys(modules).forEach((key) => {
 	ways.push(modules[key].default);
 });
 
-export default {
-	ways: ways,
-};
+export default { ways };

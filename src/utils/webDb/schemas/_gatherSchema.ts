@@ -1,16 +1,6 @@
 const primaryKey = {
 	key: "id",
-	fields: [
-		"name",
-		"power",
-		"taluopai",
-		"colspan",
-		"top",
-		"orderby",
-		"order",
-		"org",
-		"yuan",
-	],
+	fields: ["name", "power", "taluopai", "colspan", "top", "orderby", "yuan"],
 	separator: "|",
 };
 
@@ -40,36 +30,9 @@ const properties = {
 			type: "number",
 			default: 0,
 		},
-		order: {
-			type: "array",
-			uniqueItems: true,
-			items: {
-				type: "object",
-				properties: {
-					num: {
-						type: "number",
-					},
-					name: {
-						type: "string",
-					},
-					func: {
-						type: "string",
-					},
-					main: {
-						type: "string",
-					},
-					assist: {
-						type: "string",
-					},
-					ceremony: {
-						type: "string",
-					},
-				},
-			},
-		},
 		org: {
 			type: "string",
-			default: "",
+			default: "——",
 		},
 		yuan: {
 			type: "object",
@@ -83,6 +46,46 @@ const properties = {
 					default: "",
 				},
 			},
+		},
+		9: {
+			type: "string",
+			default: "",
+		},
+		8: {
+			type: "string",
+			default: "",
+		},
+		7: {
+			type: "string",
+			default: "",
+		},
+		6: {
+			type: "string",
+			default: "",
+		},
+		5: {
+			type: "string",
+			default: "",
+		},
+		4: {
+			type: "string",
+			default: "",
+		},
+		3: {
+			type: "string",
+			default: "",
+		},
+		2: {
+			type: "string",
+			default: "",
+		},
+		1: {
+			type: "string",
+			default: "",
+		},
+		0: {
+			type: "string",
+			default: "",
 		},
 	},
 };
