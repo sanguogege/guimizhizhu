@@ -73,6 +73,8 @@ const cellClassSet = ({ row, columnIndex }: any) => {
     }
 }
 
+// sdsdsdsdsd323232322321312sdsd
+
 const enter = (row: any, column: any, cell: any, event: any) => {
     console.log(row);
     console.log(column);
