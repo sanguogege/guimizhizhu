@@ -1,17 +1,13 @@
-const modules: Record<string, any> = import.meta.glob(
-    ["./yz/*.json"],
-    {
-        eager: true
-    }
-);
-
-const yuanzhi: any[] = [];
-
-Object.keys(modules).forEach(key => {
-    yuanzhi.push(modules[key].default);
+const modules: Record<string, any> = import.meta.glob(["./yz/*.json"], {
+	eager: true,
 });
 
+const yuans: any[] = [];
+
+Object.keys(modules).forEach((key) => {
+	yuans.push(modules[key].default);
+});
 
 export default {
-    yuanzhi: yuanzhi
-}
+	yuans: yuans,
+};

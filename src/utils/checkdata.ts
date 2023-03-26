@@ -20,9 +20,9 @@ function orderBy(a: any, b: any) {
 	return a.orderby - b.orderby;
 }
 
-const checkMain = (main: any, organization?: any, yuanzhi?: any) => {
-	const newArray = main.map((way: any) => {
-		organization.forEach((org: any) => {
+const checkMain = (ways: any, orgs?: any, yuans?: any) => {
+	ways.map((way: any) => {
+		orgs.forEach((org: any) => {
 			if (org.way.includes(way.name) && org.ismian) {
 				if (!way.org) {
 					way.org = org.name;
@@ -31,19 +31,24 @@ const checkMain = (main: any, organization?: any, yuanzhi?: any) => {
 				}
 			}
 		});
-		yuanzhi.forEach((yz: any) => {
-			if (yz.ways.includes(way.name)) {
-				way.yuanzhi = yz;
-				way.colspan = yz.ways.length;
+		yuans.forEach((yz: any) => {
+			if (yz.way.includes(way.name)) {
+				way.yuan = {
+					name: yz.name,
+					title: yz.title,
+				};
+				way.colspan = yz.way.length;
 			}
 		});
 		way.order.forEach((cur: any) => {
-			way[cur.num] = cur;
-			return;
+			way[cur.num] = cur.name;
 		});
+
+		delete way.order;
 		return way;
 	});
-	return newArray;
+
+	return ways;
 };
 
 export { checkMain, switchArray };

@@ -31,11 +31,11 @@ const data2 = switchArray(organizationDocument)
 const data3 = switchArray(yuanzhiDocument)
 
 // 综合处理，合并。# TODO 合并处理也需要存入数据库
-const alldata = checkMain(data, data2, data3)
+// const alldata = checkMain(data, data2, data3)
 
 
 
-console.log(alldata);
+// console.log(alldata);
 
 
 const colyuanzhi = {

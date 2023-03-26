@@ -28,7 +28,7 @@ const creatDataBase = async () => {
 		name: "guimizhizhu",
 		storage: getRxStorageDexie(),
 	});
-
+	console.log(schemas);
 	const schemasAdd = schemas.map(async (element: any) => {
 		await myDatabase.addCollections(element);
 	});
