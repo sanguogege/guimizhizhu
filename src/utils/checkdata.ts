@@ -41,7 +41,10 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 			}
 		});
 		way.order.forEach((cur: any) => {
-			way[cur.num] = cur.name;
+			way[cur.num] = {
+				name: cur.name,
+				num: cur.num,
+			};
 		});
 
 		delete way.order;

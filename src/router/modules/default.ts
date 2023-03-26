@@ -8,7 +8,7 @@ export default {
 		{
 			path: "/",
 			name: "Welcome",
-			component: () => import("@/views/HomeView.vue"),
+			component: () => import("@/views/home/index.vue"),
 			meta: {},
 		},
 	],

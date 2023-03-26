@@ -48,44 +48,134 @@ const properties = {
 			},
 		},
 		9: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		8: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		7: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		6: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		5: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		4: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		3: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		2: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		1: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 		0: {
-			type: "string",
-			default: "",
+			type: "object",
+			properties: {
+				name: {
+					type: "string",
+					default: "",
+				},
+				num: {
+					type: "number",
+					default: 0,
+				},
+			},
 		},
 	},
 };

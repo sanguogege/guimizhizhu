@@ -10,6 +10,9 @@ import { onMounted } from "vue";
 
 import { useRouter } from "vue-router";
 
+
+import homelink from "@/components/homelink/index.vue";
+
 const router = useRouter();
 
 
@@ -100,9 +103,7 @@ onMounted(() => {
         <el-table-column class="main_box" align="center" label="诡秘之主序列途径一览">
             <el-table-column width="140" align="center" label="序列权柄">
                 <template #default="scope">
-                    <router-link to="/sequence">
-                        {{ scope.row.power }}
-                    </router-link>
+                    <homelink :data="scope.row.yuan"></homelink>
                 </template>
             </el-table-column>
             <el-table-column width="80" align="center" label="序列九" prop="9" />
