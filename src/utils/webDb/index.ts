@@ -19,8 +19,6 @@ const useDataBase = () => {
 if (isNewData.isNewData) {
 	await removeRxDatabase("guimizhizhu", getRxStorageDexie());
 	localStorage.setItem("version", isNewData.version);
-} else {
-	console.log("没有更新");
 }
 
 const creatDataBase = async () => {

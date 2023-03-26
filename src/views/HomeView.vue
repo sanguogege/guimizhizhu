@@ -22,17 +22,6 @@ const gatherDocument = await database.gather.find().exec();
 
 const dataAll = switchArray(gatherDocument, true);
 
-console.log(dataAll);
-// const data = switchArray(waysDocument, true)
-// const data2 = switchArray(organizationDocument)
-// const data3 = switchArray(yuanzhiDocument)
-
-// 综合处理，合并。# TODO 合并处理也需要存入数据库
-
-
-
-// console.log(alldata);
-
 
 const colyuanzhi = {
     name: "",

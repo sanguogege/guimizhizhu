@@ -12,7 +12,6 @@ if (!thisVersion) {
 	isNewData = thisVersion == version ? false : true;
 }
 
-console.log("version", version);
-console.log(isNewData);
+console.log("version", version, "是否需要更新", isNewData);
 
 export default { isNewData, version };
