@@ -25,12 +25,12 @@
 
 .yonganzhihe {
     background-color: var(--yonganzhihe-bg);
-    color: var(--primary-color) !important;
+    color: var(--primary-color);
 }
 
 .el-table__body tr:hover>td.el-table__cell.yonganzhihe {
     background-color: var(--yonganzhihe-bg);
-    color: var(--primary-color) !important;
+    color: var(--primary-color);
 }
 
 .hundunhai {
