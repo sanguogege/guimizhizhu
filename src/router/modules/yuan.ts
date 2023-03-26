@@ -1,14 +1,14 @@
 import layout from "@/layout/index.vue";
 
 export default {
-	path: "/",
-	name: "home",
+	path: "/yuan",
+	name: "yuan",
 	component: layout,
 	children: [
 		{
-			path: "/",
-			name: "Welcome",
-			component: () => import("@/views/HomeView.vue"),
+			path: "/yuan",
+			name: "yuan",
+			component: () => import("@/views/yuan/index.vue"),
 			meta: {},
 		},
 	],

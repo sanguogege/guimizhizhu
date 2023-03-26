@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { switchArray } from "@/utils/checkdata"
-
-import { creatDataBase, useDataBase } from "@/utils/webDb";
+import { useDataBase } from "@/utils/webDb";
 
 import { ElMessage } from 'element-plus'
 
@@ -14,10 +13,7 @@ import calendar from "yz-calendar";
 // 使用数据库
 const database: any = useDataBase();
 
-// 获取指定的表
-const gather = database.gather;
-
-// // 获取指定表的数据list
+// 获取指定表的数据list
 const gatherDocument = await database.gather.find().exec();
 
 const dataAll = switchArray(gatherDocument, true);
@@ -80,18 +76,9 @@ const enter = (row: any, column: any, cell: any, event: any) => {
     console.log(event);
 }
 
-const update = async () => {
-    await database.remove();
-    creatDataBase()
-    setTimeout(function () {
-        location.reload()
-    }, 2000)
-}
-
 </script>
 
 <template>
-    <el-button type="primary" @click.once="update()">更新数据库</el-button>
     <el-table class="main" @cell-click="enter" :cell-class-name="cellClassSet" :border="true" :data="dataAll"
         :span-method="spanMethod">
         <el-table-column align="center" label="诡秘之主序列途径一览" label-class-name="main_box">
