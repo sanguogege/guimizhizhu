@@ -1,21 +1,95 @@
-.this {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.table {
+.sequencetable {
     display: block;
     width: 1600px;
     margin: auto;
     border-collapse: collapse;
 }
 
-td,
-th {
-    border: 1px solid black;
+.sequencetable td,
+.sequencetable th {
+    border: 1px solid lightblue;
     font-size: 14px;
     text-align: center;
     padding: 4px;
     cursor: pointer;
+}
+
+.sequencetable .yonganzhihe,
+.sequencetable .yonganzhihe:hover {
+    background-color: var(--yonganzhihe-bg);
+    color: var(--primary-color);
+}
+
+
+.sequencetable .hundunhai,
+.sequencetable .hundunhai:hover {
+    background-color: var(--hundunhai-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .zhishihuangye:hover {
+    background-color: var(--zhishihuangye-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .zhishihuangye,
+.zhishihuangye:hover {
+    background-color: var(--zhishihuangye-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .yuanbao,
+.sequencetable .yuanbao:hover {
+    background-color: var(--yuanbao-bg);
+    color: var(--primary-color);
+}
+
+
+.sequencetable .shixuzhiguo,
+.sequencetable .shixuzhiguo:hover {
+    background-color: var(--shixuzhiguo-bg);
+    color: var(--primary-color);
+}
+
+
+.sequencetable .zaihuozhicheng,
+.sequencetable .zaihuozhicheng:hover {
+    background-color: var(--zaihuozhicheng-bg);
+    color: var(--primary-color);
+}
+
+
+.sequencetable .muchao,
+.sequencetable .muchao:hover {
+    background-color: var(--muchao-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .anyingshijie,
+.sequencetable .anyingshijie:hover {
+    background-color: var(--anyingshijie-bg);
+    color: var(--primary-color);
+}
+
+
+.yonganzhihe a,
+.hundunhai a,
+.zhishihuangye a,
+.yuanbao a,
+.shixuzhiguo a,
+.anyingshijie a,
+.zaihuozhicheng a,
+.anyingshijie a,
+.muchao a,
+.zaihuozhicheng a {
+    color: var(--primary-color);
+}
+
+.el-table__body .el-table__cell:hover {
+    font-weight: bold;
+    background-color: #25ff08 !important;
+}
+
+.el-table__body .el-table__cell:hover a {
+    color: #240808;
 }

@@ -1,14 +1,10 @@
 import { defineComponent, h } from "vue";
 import { useDataBase } from "@/utils/webDb";
 import { switchArray } from "@/utils/checkdata";
+import gsap from "gsap";
 import "@/assets/css/table.css";
 
-function getRowspan(el: any) {
-	let rowspan: any = {
-		name: "",
-		isName: true,
-		isTitle: true,
-	};
+function getRowspan(el: any, rowspan: any) {
 	if (rowspan.name == el.yuan.name) {
 		rowspan.isName = false;
 		rowspan.isTitle = false;
@@ -19,47 +15,64 @@ function getRowspan(el: any) {
 	}
 	return rowspan;
 }
+const bgSet: any = {
+	源堡: { name: "yuanbao" },
+	永暗之河: { name: "yonganzhihe" },
+	混沌海: { name: "hundunhai" },
+	知识荒野: { name: "zhishihuangye" },
+	失序之国: { name: "shixuzhiguo" },
+	灾祸之城: { name: "zaihuozhicheng" },
+	母巢: { name: "muchao" },
+	暗影世界: { name: "anyingshijie" },
+	光之钥: { name: "guangzhishi" },
+};
+function SetBack(yuan: string, name: string = "") {
+	if (name != "源堡") {
+		return bgSet[yuan].name;
+	}
+}
 
-function CreatDom1(data: any) {
-	let rowspan: any = {
+function CreatDom(data: any) {
+	let rowcon: any = {
 		name: "",
 		isName: true,
 		isTitle: true,
 	};
 	const dom = data.map((el: any) => {
-		if (rowspan.name == el.yuan.name) {
-			rowspan.isName = false;
-			rowspan.isTitle = false;
-		} else {
-			rowspan.name = el.yuan.name;
-			rowspan.isName = true;
-			rowspan.isTitle = true;
-		}
+		const rowspan = getRowspan(el, rowcon);
 		return h(
 			<tr>
 				<td>{el.power}</td>
-				<td class="this">{el[9].name}</td>
+				<td>{el[9].name}</td>
 				<td>{el[8].name}</td>
 				<td>{el[7].name}</td>
 				<td>{el[6].name}</td>
 				<td>{el[5].name}</td>
-				<td>{el[4].name}</td>
-				<td>{el[3].name}</td>
-				<td>{el[4].name}</td>
-				<td>{el[1].name}</td>
-				<td>{el[0].name}</td>
+				<td class={SetBack(el.yuan.name, el.yuan.name)}>
+					{el[4].name}
+				</td>
+				<td class={SetBack(el.yuan.name)}>{el[3].name}</td>
+				<td class={SetBack(el.yuan.name)}>{el[4].name}</td>
+				<td class={SetBack(el.yuan.name)}>{el[1].name}</td>
+				<td class={SetBack(el.yuan.name)}>{el[0].name}</td>
 				<td>{el.org}</td>
 				<td>{el.taluopai}</td>
 				<td>{el.top}</td>
 				{rowspan.isName ? (
-					<td rowspan={rowspan.isName ? el.rowspan : 0}>
+					<td
+						class={SetBack(el.yuan.name)}
+						rowspan={rowspan.isName ? el.rowspan : 0}
+					>
 						{el.yuan.name}
 					</td>
 				) : (
 					""
 				)}
 				{rowspan.isTitle ? (
-					<td rowspan={rowspan.isTitle ? el.rowspan : 0}>
+					<td
+						class={SetBack(el.yuan.name)}
+						rowspan={rowspan.isTitle ? el.rowspan : 0}
+					>
 						{el.yuan.title}
 					</td>
 				) : (
@@ -75,12 +88,18 @@ export default defineComponent({
 	async setup() {
 		// 使用数据库
 		const database: any = useDataBase();
-
+		const line = gsap.timeline();
+		line.from(".table ", {
+			duration: 4,
+			ease: "power2",
+			opacity: 0,
+			y: -1600,
+		});
 		// 获取指定表的数据list
 		const gatherDocument = await database.gather.find().exec();
 
 		const dataAll = switchArray(gatherDocument, true);
-		const dom = CreatDom1(dataAll);
+		const dom = CreatDom(dataAll);
 		// console.log(dom);
 		// const CreatDom = () => {
 		// 	let rowspan: any = {
@@ -134,7 +153,7 @@ export default defineComponent({
 		// };
 
 		return () => (
-			<table class="table">
+			<table class="sequencetable">
 				<thead>
 					<tr>
 						<td>序列权柄</td>
