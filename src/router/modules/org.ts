@@ -6,13 +6,13 @@ export default {
 	component: layout,
 	children: [
 		{
-			path: "/orgs",
+			path: "/org",
 			name: "orgs",
 			component: () => import("@/views/orgs/index.vue"),
 			meta: {},
 		},
 		{
-			path: "/orgs/:id",
+			path: "/org/:id",
 			name: "orgsid",
 			component: () => import("@/views/orgs/index.vue"),
 			meta: {},

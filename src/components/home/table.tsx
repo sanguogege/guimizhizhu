@@ -1,4 +1,5 @@
 import { defineComponent, h } from "vue";
+import { RouterLink } from "vue-router";
 import { useDataBase } from "@/utils/webDb";
 import { switchArray } from "@/utils/checkdata";
 import gsap from "gsap";
@@ -26,9 +27,75 @@ const bgSet: any = {
 	暗影世界: { name: "anyingshijie" },
 	光之钥: { name: "guangzhishi" },
 };
-function SetBack(yuan: string, name: string = "") {
+function SetBgClass(yuan: string, name: string = "") {
+	let className: string = "";
 	if (name != "源堡") {
-		return bgSet[yuan].name;
+		className = bgSet[yuan].name;
+	}
+	return className;
+}
+
+function SetFontClass(name: string, num: number) {
+	if (name == "lieren" && num <= 4) {
+		return "male";
+	} else if (name == "cike" && num <= 7) {
+		return "female";
+	} else if (name == "gengzhongzhe" && num <= 2) {
+		return "female";
+	} else if (name == "yaoshi" && num <= 1) {
+		return "female";
+	}
+}
+
+function DoubleCheck(name: string) {
+	if (!name) {
+		return {
+			router: "",
+			isSingle: true,
+			name: "",
+		};
+	}
+	if (name.indexOf("/") != -1) {
+		if (name.indexOf("皇室") != -1) {
+			const first = name.split("/");
+			const last = first.map((e: any) => {
+				if (e.indexOf("皇室") == -1) {
+					return (e = e + "皇室");
+				}
+				return e;
+			});
+			return {
+				router: last,
+				name: first,
+				isSingle: false,
+			};
+		} else if (name.indexOf("家族") != -1) {
+			const first = name.split("/");
+			const last = first.map((e: any) => {
+				if (e.indexOf("家族") == -1) {
+					return (e = e + "家族");
+				}
+				return e;
+			});
+
+			return {
+				router: last,
+				name: first,
+				isSingle: false,
+			};
+		} else {
+			return {
+				router: name.split("/"),
+				isSingle: false,
+				name: name.split("/"),
+			};
+		}
+	} else {
+		return {
+			router: name,
+			isSingle: true,
+			name: "",
+		};
 	}
 }
 
@@ -39,41 +106,156 @@ function CreatDom(data: any) {
 		isTitle: true,
 	};
 	const dom = data.map((el: any) => {
+		const isDoubleOrg = DoubleCheck(el.org);
+		const isDoubleTop = DoubleCheck(el.top);
 		const rowspan = getRowspan(el, rowcon);
 		return h(
 			<tr>
-				<td>{el.power}</td>
-				<td>{el[9].name}</td>
-				<td>{el[8].name}</td>
-				<td>{el[7].name}</td>
-				<td>{el[6].name}</td>
-				<td>{el[5].name}</td>
-				<td class={SetBack(el.yuan.name, el.yuan.name)}>
-					{el[4].name}
+				<td>
+					<RouterLink to={"/sequence/" + el.name}>
+						{el.power}
+					</RouterLink>
 				</td>
-				<td class={SetBack(el.yuan.name)}>{el[3].name}</td>
-				<td class={SetBack(el.yuan.name)}>{el[4].name}</td>
-				<td class={SetBack(el.yuan.name)}>{el[1].name}</td>
-				<td class={SetBack(el.yuan.name)}>{el[0].name}</td>
-				<td>{el.org}</td>
+				<td>
+					<RouterLink to={"/sequence/" + el.name + "/" + el[9].name}>
+						{el[9].name}
+					</RouterLink>
+				</td>
+				<td>
+					<RouterLink to={"/sequence/" + el.name + "/" + el[8].name}>
+						{el[8].name}
+					</RouterLink>
+				</td>
+				<td>
+					<RouterLink
+						class={SetFontClass(el.name, el[7].num)}
+						to={"/sequence/" + el.name + "/" + el[7].name}
+					>
+						{el[7].name}
+					</RouterLink>
+				</td>
+				<td>
+					<RouterLink
+						class={SetFontClass(el.name, el[6].num)}
+						to={"/sequence/" + el.name + "/" + el[6].name}
+					>
+						{el[6].name}
+					</RouterLink>
+				</td>
+				<td>
+					<RouterLink
+						class={SetFontClass(el.name, el[5].num)}
+						to={"/sequence/" + el.name + "/" + el[5].name}
+					>
+						{el[5].name}
+					</RouterLink>
+				</td>
+				<td class={SetBgClass(el.yuan.name, el.yuan.name)}>
+					<RouterLink
+						class={SetFontClass(el.name, el[4].num)}
+						to={"/sequence/" + el.name + "/" + el[4].name}
+					>
+						{el[4].name}
+					</RouterLink>
+				</td>
+				<td class={SetBgClass(el.yuan.name)}>
+					<RouterLink
+						class={SetFontClass(el.name, el[3].num)}
+						to={"/sequence/" + el.name + "/" + el[3].name}
+					>
+						{el[3].name}
+					</RouterLink>
+				</td>
+				<td class={SetBgClass(el.yuan.name)}>
+					<RouterLink
+						class={SetFontClass(el.name, el[2].num)}
+						to={"/sequence/" + el.name + "/" + el[2].name}
+					>
+						{el[2].name}
+					</RouterLink>
+				</td>
+				<td class={SetBgClass(el.yuan.name)}>
+					<RouterLink
+						class={SetFontClass(el.name, el[1].num)}
+						to={"/sequence/" + el.name + "/" + el[1].name}
+					>
+						{el[1].name}
+					</RouterLink>
+				</td>
+				<td class={SetBgClass(el.yuan.name)}>
+					<RouterLink
+						class={SetFontClass(el.name, el[0].num)}
+						to={"/sequence/" + el.name + "/" + el[0].name}
+					>
+						{el[0].name}
+					</RouterLink>
+				</td>
+				{isDoubleOrg.isSingle ? (
+					<td width="160">
+						<RouterLink
+							to={
+								(isDoubleOrg.router as string) == ""
+									? "/org"
+									: "/org/" + isDoubleOrg.router
+							}
+						>
+							{isDoubleOrg.router == ""
+								? "——"
+								: isDoubleOrg.router}
+						</RouterLink>
+					</td>
+				) : (
+					<td width="160">
+						<RouterLink to={"/org/" + isDoubleOrg.router[0]}>
+							{isDoubleOrg.name[0]}
+						</RouterLink>
+						/
+						<RouterLink to={"/org/" + isDoubleOrg.router[1]}>
+							{isDoubleOrg.name[1]}
+						</RouterLink>
+					</td>
+				)}
 				<td>{el.taluopai}</td>
-				<td>{el.top}</td>
+				{isDoubleTop.isSingle ? (
+					<td width="160">
+						<RouterLink
+							to={("/role/" + isDoubleTop.router) as string}
+						>
+							{el.top}
+						</RouterLink>
+					</td>
+				) : (
+					<td width="160">
+						<RouterLink to={"/role/" + isDoubleTop.router[0]}>
+							{isDoubleTop.router[0]}
+						</RouterLink>
+						/
+						<RouterLink to={"/role/" + isDoubleTop.router[1]}>
+							{isDoubleTop.router[1]}
+						</RouterLink>
+					</td>
+				)}
 				{rowspan.isName ? (
 					<td
-						class={SetBack(el.yuan.name)}
+						class={SetBgClass(el.yuan.name)}
 						rowspan={rowspan.isName ? el.rowspan : 0}
 					>
-						{el.yuan.name}
+						<RouterLink to={"/yuan/" + el.yuan.name}>
+							{el.yuan.name}
+						</RouterLink>
 					</td>
 				) : (
 					""
 				)}
 				{rowspan.isTitle ? (
 					<td
-						class={SetBack(el.yuan.name)}
+						width="250"
+						class={SetBgClass(el.yuan.name)}
 						rowspan={rowspan.isTitle ? el.rowspan : 0}
 					>
-						{el.yuan.title}
+						<RouterLink to={"/yuan/" + el.yuan.name}>
+							{el.yuan.title}
+						</RouterLink>
 					</td>
 				) : (
 					""
@@ -88,70 +270,11 @@ export default defineComponent({
 	async setup() {
 		// 使用数据库
 		const database: any = useDataBase();
-		const line = gsap.timeline();
-		line.from(".table ", {
-			duration: 4,
-			ease: "power2",
-			opacity: 0,
-			y: -1600,
-		});
 		// 获取指定表的数据list
 		const gatherDocument = await database.gather.find().exec();
 
 		const dataAll = switchArray(gatherDocument, true);
 		const dom = CreatDom(dataAll);
-		// console.log(dom);
-		// const CreatDom = () => {
-		// 	let rowspan: any = {
-		// 		name: "",
-		// 		isName: true,
-		// 		isTitle: true,
-		// 	};
-		// 	const dom = dataAll.map((el: any) => {
-		// 		if (rowspan.name == el.yuan.name) {
-		// 			rowspan.isName = false;
-		// 			rowspan.isTitle = false;
-		// 		} else {
-		// 			rowspan.name = el.yuan.name;
-		// 			rowspan.isName = true;
-		// 			rowspan.isTitle = true;
-		// 		}
-		// 		return h(
-		// 			<tr>
-		// 				<td>{el.power}</td>
-		// 				<td>{el[9].name}</td>
-		// 				<td>{el[8].name}</td>
-		// 				<td>{el[7].name}</td>
-		// 				<td>{el[6].name}</td>
-		// 				<td>{el[5].name}</td>
-		// 				<td>{el[4].name}</td>
-		// 				<td>{el[3].name}</td>
-		// 				<td>{el[4].name}</td>
-		// 				<td>{el[1].name}</td>
-		// 				<td>{el[0].name}</td>
-		// 				<td>{el.org}</td>
-		// 				<td>{el.taluopai}</td>
-		// 				<td>{el.top}</td>
-		// 				{rowspan.isName ? (
-		// 					<td rowspan={rowspan.isName ? el.rowspan : 0}>
-		// 						{el.yuan.name}
-		// 					</td>
-		// 				) : (
-		// 					""
-		// 				)}
-		// 				{rowspan.isTitle ? (
-		// 					<td rowspan={rowspan.isTitle ? el.rowspan : 0}>
-		// 						{el.yuan.title}
-		// 					</td>
-		// 				) : (
-		// 					""
-		// 				)}
-		// 			</tr>
-		// 		);
-		// 	});
-		// 	return dom;
-		// };
-
 		return () => (
 			<table class="sequencetable">
 				<thead>
@@ -174,7 +297,6 @@ export default defineComponent({
 						<td>旧日称号</td>
 					</tr>
 				</thead>
-
 				<tbody>{dom}</tbody>
 			</table>
 		);

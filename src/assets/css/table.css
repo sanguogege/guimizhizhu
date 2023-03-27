@@ -4,92 +4,95 @@
     border-collapse: collapse;
 }
 
-
+.sequencetable tr,
 .sequencetable td,
 .sequencetable th {
-    border: 1px solid lightblue;
     font-size: 14px;
     text-align: center;
-    padding: 6px;
+    height: 1px;
+    transition: all 0.4s ease-in-out;
+}
+
+
+.sequencetable thead td {
+    color: var(--primary-color);
+    border: 1px solid #4050df;
+    background-color: #001880;
+    padding: 16px 0;
+}
+
+.sequencetable tbody td {
+    border: 1px solid lightblue;
+    padding: 5px 6px;
+}
+
+.sequencetable tbody td:hover {
     cursor: pointer;
+    background-color: #cdacec;
 }
 
-.sequencetable .yonganzhihe,
-.sequencetable .yonganzhihe:hover {
+.sequencetable tbody td:hover,
+.sequencetable tbody td a:hover {
+    color: #c29795 !important;
+}
+
+
+.sequencetable td a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in-out;
+}
+
+.sequencetable td a.female {
+    color: #e874f3;
+}
+
+.sequencetable td a.male {
+    color: #b10900;
+}
+
+.sequencetable .yonganzhihe {
     background-color: var(--yonganzhihe-bg);
-    color: var(--primary-color);
 }
 
-
-.sequencetable .hundunhai,
-.sequencetable .hundunhai:hover {
+.sequencetable .hundunhai {
     background-color: var(--hundunhai-bg);
-    color: var(--primary-color);
 }
 
-.sequencetable .zhishihuangye:hover {
+.sequencetable .zhishihuangye {
     background-color: var(--zhishihuangye-bg);
-    color: var(--primary-color);
 }
 
-.sequencetable .zhishihuangye,
-.zhishihuangye:hover {
-    background-color: var(--zhishihuangye-bg);
-    color: var(--primary-color);
-}
-
-.sequencetable .yuanbao,
-.sequencetable .yuanbao:hover {
+.sequencetable .yuanbao {
     background-color: var(--yuanbao-bg);
-    color: var(--primary-color);
 }
 
-
-.sequencetable .shixuzhiguo,
-.sequencetable .shixuzhiguo:hover {
+.sequencetable .shixuzhiguo {
     background-color: var(--shixuzhiguo-bg);
-    color: var(--primary-color);
 }
 
-
-.sequencetable .zaihuozhicheng,
-.sequencetable .zaihuozhicheng:hover {
+.sequencetable .zaihuozhicheng {
     background-color: var(--zaihuozhicheng-bg);
-    color: var(--primary-color);
 }
 
-
-.sequencetable .muchao,
-.sequencetable .muchao:hover {
+.sequencetable .muchao {
     background-color: var(--muchao-bg);
-    color: var(--primary-color);
 }
 
-.sequencetable .anyingshijie,
-.sequencetable .anyingshijie:hover {
+.sequencetable .anyingshijie {
     background-color: var(--anyingshijie-bg);
+}
+
+.sequencetable .yonganzhihe a,
+.sequencetable .hundunhai a,
+.sequencetable .zhishihuangye a,
+.sequencetable .yuanbao a,
+.sequencetable .shixuzhiguo a,
+.sequencetable .anyingshijie a,
+.sequencetable .zaihuozhicheng a,
+.sequencetable .anyingshijie a,
+.sequencetable .muchao a,
+.sequencetable .zaihuozhicheng a {
     color: var(--primary-color);
-}
-
-
-.yonganzhihe a,
-.hundunhai a,
-.zhishihuangye a,
-.yuanbao a,
-.shixuzhiguo a,
-.anyingshijie a,
-.zaihuozhicheng a,
-.anyingshijie a,
-.muchao a,
-.zaihuozhicheng a {
-    color: var(--primary-color);
-}
-
-.sequencetable td:hover {
-    font-weight: bold;
-    background-color: #25ff08 !important;
-}
-
-.sequencetable td:hover a {
-    color: #240808;
 }

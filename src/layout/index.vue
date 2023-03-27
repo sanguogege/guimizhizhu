@@ -19,7 +19,7 @@ const update = async () => {
         <RouterLink to="/org">组织</RouterLink>
         <RouterLink to="/sequence">序列</RouterLink>
     </div>
-    <el-button type="primary" @click.once="update()">更新数据库</el-button>
+    <button @click.once="update()">更新数据库</button>
     <div>
         <RouterView />
     </div>
