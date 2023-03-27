@@ -1,16 +1,16 @@
 .sequencetable {
-    display: block;
     width: 1600px;
     margin: auto;
     border-collapse: collapse;
 }
+
 
 .sequencetable td,
 .sequencetable th {
     border: 1px solid lightblue;
     font-size: 14px;
     text-align: center;
-    padding: 4px;
+    padding: 6px;
     cursor: pointer;
 }
 
@@ -85,11 +85,11 @@
     color: var(--primary-color);
 }
 
-.el-table__body .el-table__cell:hover {
+.sequencetable td:hover {
     font-weight: bold;
     background-color: #25ff08 !important;
 }
 
-.el-table__body .el-table__cell:hover a {
+.sequencetable td:hover a {
     color: #240808;
 }
