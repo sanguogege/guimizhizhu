@@ -4,30 +4,41 @@ import { switchArray } from "@/utils/checkdata";
 import "@/assets/css/table.css";
 
 function getRowspan(el: any) {
-	let colspan: any = {
+	let rowspan: any = {
 		name: "",
 		isName: true,
 		isTitle: true,
 	};
-	if (colspan.name == el.yuan.name) {
-		colspan.isName = false;
-		colspan.isTitle = false;
+	if (rowspan.name == el.yuan.name) {
+		rowspan.isName = false;
+		rowspan.isTitle = false;
 	} else {
-		colspan.name = el.yuan.name;
-		colspan.isName = true;
-		colspan.isTitle = true;
+		rowspan.name = el.yuan.name;
+		rowspan.isName = true;
+		rowspan.isTitle = true;
 	}
-
-	return colspan;
+	return rowspan;
 }
 
-function CreatDom(data: any) {
+function CreatDom1(data: any) {
+	let rowspan: any = {
+		name: "",
+		isName: true,
+		isTitle: true,
+	};
 	const dom = data.map((el: any) => {
-		const rowspan = getRowspan(el);
+		if (rowspan.name == el.yuan.name) {
+			rowspan.isName = false;
+			rowspan.isTitle = false;
+		} else {
+			rowspan.name = el.yuan.name;
+			rowspan.isName = true;
+			rowspan.isTitle = true;
+		}
 		return h(
 			<tr>
 				<td>{el.power}</td>
-				<td>{el[9].name}</td>
+				<td class="this">{el[9].name}</td>
 				<td>{el[8].name}</td>
 				<td>{el[7].name}</td>
 				<td>{el[6].name}</td>
@@ -69,24 +80,23 @@ export default defineComponent({
 		const gatherDocument = await database.gather.find().exec();
 
 		const dataAll = switchArray(gatherDocument, true);
-		console.log(dataAll);
-		const dom = CreatDom(dataAll);
+		const dom = CreatDom1(dataAll);
+		// console.log(dom);
 		// const CreatDom = () => {
-		// 	let colspan: any = {
+		// 	let rowspan: any = {
 		// 		name: "",
 		// 		isName: true,
 		// 		isTitle: true,
 		// 	};
 		// 	const dom = dataAll.map((el: any) => {
-		// 		if (colspan.name == el.yuan.name) {
-		// 			colspan.isName = false;
-		// 			colspan.isTitle = false;
+		// 		if (rowspan.name == el.yuan.name) {
+		// 			rowspan.isName = false;
+		// 			rowspan.isTitle = false;
 		// 		} else {
-		// 			colspan.name = el.yuan.name;
-		// 			colspan.isName = true;
-		// 			colspan.isTitle = true;
+		// 			rowspan.name = el.yuan.name;
+		// 			rowspan.isName = true;
+		// 			rowspan.isTitle = true;
 		// 		}
-		// 		aa();
 		// 		return h(
 		// 			<tr>
 		// 				<td>{el.power}</td>
@@ -103,15 +113,15 @@ export default defineComponent({
 		// 				<td>{el.org}</td>
 		// 				<td>{el.taluopai}</td>
 		// 				<td>{el.top}</td>
-		// 				{colspan.isName ? (
-		// 					<td rowspan={colspan.isName ? el.colspan : 0}>
+		// 				{rowspan.isName ? (
+		// 					<td rowspan={rowspan.isName ? el.rowspan : 0}>
 		// 						{el.yuan.name}
 		// 					</td>
 		// 				) : (
 		// 					""
 		// 				)}
-		// 				{colspan.isTitle ? (
-		// 					<td rowspan={colspan.isTitle ? el.colspan : 0}>
+		// 				{rowspan.isTitle ? (
+		// 					<td rowspan={rowspan.isTitle ? el.rowspan : 0}>
 		// 						{el.yuan.title}
 		// 					</td>
 		// 				) : (
@@ -145,6 +155,7 @@ export default defineComponent({
 						<td>旧日称号</td>
 					</tr>
 				</thead>
+
 				<tbody>{dom}</tbody>
 			</table>
 		);
