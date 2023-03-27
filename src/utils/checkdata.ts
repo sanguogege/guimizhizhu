@@ -41,14 +41,15 @@ const checkMain = (ways: any, orgs?: any, yuans?: any) => {
 					name: yz.name,
 					title: yz.title,
 				};
-				way.colspan = yz.way.length;
+				way.rowspan = yz.way.length;
 			}
 		});
+		way.taluopai = way.taluopai;
+
 		way.order.forEach((cur: any) => {
 			way[cur.num] = {
 				name: cur.name,
 				num: cur.num,
-				type: way.name,
 			};
 		});
 

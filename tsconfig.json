@@ -16,7 +16,8 @@
         "lib": [
             "DOM",
             "ES2017"
-        ]
+        ],
+        "jsx": "preserve"
     },
     "references": [
         {
