@@ -2,7 +2,6 @@ import { defineComponent, h } from "vue";
 import { RouterLink } from "vue-router";
 import { useDataBase } from "@/utils/webDb";
 import { switchArray } from "@/utils/checkdata";
-import gsap from "gsap";
 import "@/assets/css/table.css";
 
 function getRowspan(el: any, rowspan: any) {
