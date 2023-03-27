@@ -23,7 +23,6 @@
 
 .sequencetable tbody td {
     border: 1px solid lightblue;
-    padding: 5px 6px;
 }
 
 .sequencetable tbody td:hover {
@@ -33,15 +32,15 @@
 
 .sequencetable tbody td:hover,
 .sequencetable tbody td a:hover {
-    color: #c29795 !important;
+    color: #0004fa !important;
 }
-
 
 .sequencetable td a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s ease-in-out;
+    padding: 5px 6px;
 }
 
 .sequencetable td a.female {
