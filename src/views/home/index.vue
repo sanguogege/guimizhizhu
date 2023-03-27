@@ -2,8 +2,7 @@
 
 import gsap from 'gsap';
 
-import calendar from "yz-calendar";
-import { onMounted, onUpdated } from "vue";
+import { onMounted } from "vue";
 // console.log(calendar.solar2lunar(2021, 3, 21));
 
 import { useRouter } from "vue-router";
@@ -19,8 +18,8 @@ onMounted(() => {
     setTimeout(() => {
         const line = gsap.timeline();
         line.from(".thistable ", { duration: 2, opacity: 0, ease: "power2", display: "block", y: -1700 })
-        line.to(".thistable ", { duration: 2, opacity: 1, display: "block", y: 0 })
-    }, 300)
+        line.to(".thistable ", { duration: 1, opacity: 1, display: "block", y: 0 })
+    }, 600)
 })
 
 </script>
