@@ -8,8 +8,6 @@ import schemas from "./schemas";
 import { all } from "@/assets/data/";
 import isNewData from "@/utils/getversion";
 
-console.log(all);
-
 const KEY_DATABASE = Symbol("database");
 
 addRxPlugin(RxDBMigrationPlugin);

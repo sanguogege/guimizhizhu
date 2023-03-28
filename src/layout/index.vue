@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
 import { creatDataBase, useDataBase } from "@/utils/webDb";
+import { sideRouter } from "@/router/index"
+
+console.log(sideRouter);
+
 const database: any = useDataBase();
 
 const update = async () => {
@@ -19,13 +23,14 @@ const update = async () => {
         <RouterLink to="/org">组织</RouterLink>
         <RouterLink to="/sequence">序列</RouterLink>
     </div>
-    <button @click.once="update()">更新数据库</button>
+    <!-- <button @click.once="update()">更新数据库</button> -->
     <div>
         <RouterView />
     </div>
 </template>
 <style scoped>
 .head {
+    position: absolute;
     display: block;
     width: 100%;
     height: 80px;
