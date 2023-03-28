@@ -18,7 +18,7 @@ export default {
 		},
 		{
 			path: "/taluopai/:id",
-			name: "taluopai",
+			name: "taluopaiid",
 			component: () => import("@/views/taluopai/index.vue"),
 			meta: {
 				title: "xx塔罗牌",

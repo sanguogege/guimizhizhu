@@ -19,7 +19,7 @@ export default {
 		{
 			path: "/role/:id",
 			name: "roleid",
-			component: () => import("@/views/role/index.vue"),
+			component: () => import("@/views/role/role.vue"),
 			meta: {
 				title: "XX角色",
 				top: false,
