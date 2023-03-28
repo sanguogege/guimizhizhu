@@ -10,7 +10,7 @@ export default {
 			name: "Welcome",
 			meta: {
 				title: "诡秘之主首页",
-				order: 1,
+				order: 0,
 				name: "首页",
 				top: true,
 			},

@@ -11,7 +11,7 @@ export default {
 			component: () => import("@/views/role/index.vue"),
 			meta: {
 				title: "诡秘之主-角色大全",
-				order: 4,
+				order: 2,
 				name: "角色大全",
 				top: true,
 			},
@@ -22,7 +22,7 @@ export default {
 			component: () => import("@/views/role/index.vue"),
 			meta: {
 				title: "XX角色",
-				top: true,
+				top: false,
 			},
 		},
 	],

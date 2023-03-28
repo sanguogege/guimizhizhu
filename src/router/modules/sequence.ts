@@ -11,7 +11,7 @@ export default {
 			component: () => import("@/views/sequence/index.vue"),
 			meta: {
 				title: "诡秘之主-序列大全",
-				order: 2,
+				order: 1,
 				name: "序列大全",
 				top: true,
 			},

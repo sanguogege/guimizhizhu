@@ -22,7 +22,7 @@ export default {
 			component: () => import("@/views/yuan/index.vue"),
 			meta: {
 				title: "XX源质",
-				top: true,
+				top: false,
 			},
 		},
 	],
