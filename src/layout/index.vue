@@ -1,26 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
-import { creatDataBase, useDataBase } from "@/utils/webDb";
 import { sideRouter } from "@/router/index"
 import gsap from 'gsap';
 import { onMounted } from 'vue';
 
 
-console.log(sideRouter);
-
-const database: any = useDataBase();
-
-const update = async () => {
-    await database.remove();
-    creatDataBase()
-    setTimeout(function () {
-        location.reload()
-    }, 2000)
-}
 
 onMounted(() => {
-    // const line = gsap.timeline();
-    // line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
+    const line = gsap.timeline();
+    line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
 })
 
 
@@ -30,9 +18,11 @@ onMounted(() => {
         <div class="head_logo">
             <img class="img" src="@/assets/img/logo.png" alt="">
         </div>
-        <div class="head_link">
-            <RouterLink v-for="item in sideRouter" :to="item.path">{{ item.meta.name }}</RouterLink>
-        </div>
+        <transition>
+            <div class="head_link">
+                <RouterLink v-for="item in sideRouter" :to="item.path">{{ item.meta.name }}</RouterLink>
+            </div>
+        </transition>
     </div>
     <!-- <button @click.once="update()">更新数据库</button> -->
     <div class="body">
@@ -42,8 +32,8 @@ onMounted(() => {
 <style scoped>
 .head {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 4px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -81,13 +71,12 @@ onMounted(() => {
     justify-content: flex-start;
     width: 0;
     overflow: hidden;
-    background-image: none;
-    transition: all 1s ease-in-out;
     background-image: linear-gradient(to right, #0ef8f8, #02a3a3);
+    transition: all 1s ease-in-out;
 }
 
 .head:hover .head_link {
-    width: 600px;
+    width: 530px;
 }
 
 .head_link a {
@@ -101,5 +90,9 @@ onMounted(() => {
 
 .head_link a:last-child {
     padding-right: 40px;
+}
+
+.body {
+    margin-top: 120px;
 }
 </style>

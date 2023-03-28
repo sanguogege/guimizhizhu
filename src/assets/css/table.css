@@ -30,6 +30,12 @@
     border: 1px solid lightblue;
 }
 
+.sequencetable .tabletop td {
+    font-size: 24px;
+    letter-spacing: 24px;
+    font-weight: bold;
+}
+
 .sequencetable tbody td:hover {
     cursor: pointer;
     background-color: #cdacec;

@@ -6,19 +6,8 @@ export default {
 	component: layout,
 	children: [
 		{
-			path: "/sequence",
-			name: "sequence",
-			component: () => import("@/views/sequence/index.vue"),
-			meta: {
-				title: "诡秘之主-序列大全",
-				order: 1,
-				name: "序列大全",
-				top: true,
-			},
-		},
-		{
 			path: "/sequence/:type",
-			name: "sequence",
+			name: "sequencetype",
 			component: () => import("@/views/sequence/index.vue"),
 			meta: {
 				title: "XX途径",
@@ -26,9 +15,9 @@ export default {
 			},
 		},
 		{
-			path: "/sequence/:type/:name?",
-			name: "sequence",
-			component: () => import("@/views/sequence/index.vue"),
+			path: "/sequence/:type/:name",
+			name: "sequencename",
+			component: () => import("@/views/sequence/sequence.vue"),
 			meta: {
 				title: "XX途径xx等级",
 				top: false,

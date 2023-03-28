@@ -281,6 +281,9 @@ export default defineComponent({
 		return () => (
 			<table class="sequencetable">
 				<thead>
+					<tr class="tabletop">
+						<td colspan="16">诡秘之主途径大全</td>
+					</tr>
 					<tr>
 						<td>序列权柄</td>
 						<td>序列九</td>
