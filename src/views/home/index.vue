@@ -5,22 +5,24 @@ import { onMounted } from "vue";
 
 import Table from "@/components/home/table";
 
-onMounted(() => {
-    setTimeout(() => {
-        const line = gsap.timeline();
-        line.from(".thistable ", { duration: 2, opacity: 0, ease: "power2", display: "block", y: -1700 })
-        line.to(".thistable ", { duration: 1, opacity: 1, display: "block", y: 0 })
-    }, 600)
-})
+// onMounted(() => {
+//     const line = gsap.timeline();
+//     line.from(".tablebox ", { duration: 3, opacity: 0, ease: "power2", display: "block", y: -1700 })
+// })
 
 </script>
 
 <template>
-    <Table class="thistable"></Table>
+    <div class="tablebox">
+        <Table class="thistable"></Table>
+    </div>
 </template>
 <style scoped>
+.tablebox {
+    overflow: hidden;
+}
+
 .thistable {
-    display: none;
-    transform: translateY(-1700);
+    margin-top: 100px;
 }
 </style>

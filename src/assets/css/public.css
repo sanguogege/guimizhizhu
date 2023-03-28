@@ -11,3 +11,8 @@
     --anyingshijie-bg: #bf8e03;
     --primary-color: #fff;
 }
+
+
+:root {
+    --head-width: 60px;
+}

@@ -2,6 +2,9 @@
 import { RouterLink, RouterView } from 'vue-router';
 import { creatDataBase, useDataBase } from "@/utils/webDb";
 import { sideRouter } from "@/router/index"
+import gsap from 'gsap';
+import { onMounted } from 'vue';
+
 
 console.log(sideRouter);
 
@@ -15,25 +18,88 @@ const update = async () => {
     }, 2000)
 }
 
+onMounted(() => {
+    // const line = gsap.timeline();
+    // line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
+})
+
+
 </script>
 <template>
     <div class="head">
-        <RouterLink to="/">首页</RouterLink>
-        <RouterLink to="/yuan">源质</RouterLink>
-        <RouterLink to="/org">组织</RouterLink>
-        <RouterLink to="/sequence">序列</RouterLink>
+        <div class="head_logo">
+            <img class="img" src="@/assets/img/logo.png" alt="">
+        </div>
+        <div class="head_link">
+            <RouterLink v-for="item in sideRouter" :to="item.path">{{ item.meta.name }}</RouterLink>
+        </div>
     </div>
     <!-- <button @click.once="update()">更新数据库</button> -->
-    <div>
+    <div class="body">
         <RouterView />
     </div>
 </template>
 <style scoped>
 .head {
     position: absolute;
-    display: block;
-    width: 100%;
-    height: 80px;
-    background-color: antiquewhite;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 100px;
+    overflow: hidden;
+    height: 60px;
+    z-index: 99;
+}
+
+.head_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    background-color: #0ef8f8;
+    overflow: hidden;
+}
+
+.head:hover .head_logo .img {
+    transform: rotate(180deg);
+}
+
+.head_logo .img {
+    width: 40px;
+    height: 40px;
+    transition: transform 1s ease-in-out;
+}
+
+.head_link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 0;
+    overflow: hidden;
+    background-image: none;
+    transition: all 1s ease-in-out;
+    background-image: linear-gradient(to right, #0ef8f8, #02a3a3);
+}
+
+.head:hover .head_link {
+    width: 600px;
+}
+
+.head_link a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    height: var(--head-width);
+    padding: 0 10px;
+}
+
+.head_link a:last-child {
+    padding-right: 40px;
 }
 </style>

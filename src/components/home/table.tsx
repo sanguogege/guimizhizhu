@@ -214,7 +214,11 @@ function CreatDom(data: any) {
 						</RouterLink>
 					</td>
 				)}
-				<td>{el.taluopai}</td>
+				<td width="120">
+					<RouterLink to={"/taluopai/" + el.taluopai}>
+						{el.taluopai}
+					</RouterLink>
+				</td>
 				{isDoubleTop.isSingle ? (
 					<td width="160">
 						<RouterLink

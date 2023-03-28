@@ -4,6 +4,11 @@
     border-collapse: collapse;
 }
 
+.sequencetable tr {
+    width: 100%;
+}
+
+
 .sequencetable tr,
 .sequencetable td,
 .sequencetable th {
