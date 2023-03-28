@@ -16,6 +16,7 @@
     text-align: center;
     height: 1px;
     transition: all 0.4s ease-in-out;
+    background-color: var(--primary-color);
 }
 
 
@@ -27,7 +28,7 @@
 }
 
 .sequencetable tbody td {
-    border: 1px solid lightblue;
+    border: 1px solid var(--borer-color);
 }
 
 .sequencetable .tabletop td {

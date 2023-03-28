@@ -10,9 +10,11 @@
     --muchao-bg: #057c08;
     --anyingshijie-bg: #bf8e03;
     --primary-color: #fff;
+    --borer-color: #ebeef5;
 }
 
 
 :root {
     --head-width: 60px;
+    background-color: #313131;
 }

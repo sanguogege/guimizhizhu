@@ -2,6 +2,6 @@
 
 </script>
 <template>
-    角色大全页面
+    taluopai的一个页面
 </template>
 <style scoped></style>

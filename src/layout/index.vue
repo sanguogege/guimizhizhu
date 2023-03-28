@@ -4,13 +4,17 @@ import { sideRouter } from "@/router/index"
 import gsap from 'gsap';
 import { onMounted } from 'vue';
 
-
+const base = import.meta.env.BASE_URL
+console.log(base);
 
 onMounted(() => {
     const line = gsap.timeline();
     line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
 })
 
+function refreshPage() {
+    window.location.reload();
+}
 
 </script>
 <template>
@@ -18,11 +22,9 @@ onMounted(() => {
         <div class="head_logo">
             <img class="img" src="@/assets/img/logo.png" alt="">
         </div>
-        <transition>
-            <div class="head_link">
-                <RouterLink v-for="item in sideRouter" :to="item.path">{{ item.meta.name }}</RouterLink>
-            </div>
-        </transition>
+        <div class="head_link">
+            <a v-for="item in sideRouter" :href="base + item.path">{{ item.meta.name }}</a>
+        </div>
     </div>
     <!-- <button @click.once="update()">更新数据库</button> -->
     <div class="body">
