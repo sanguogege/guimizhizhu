@@ -8,14 +8,22 @@ export default {
 		{
 			path: "/org",
 			name: "orgs",
+			meta: {
+				title: "诡秘之主-组织大全页",
+				order: 3,
+				name: "组织大全",
+				top: true,
+			},
 			component: () => import("@/views/orgs/index.vue"),
-			meta: {},
 		},
 		{
 			path: "/org/:id",
 			name: "orgsid",
 			component: () => import("@/views/orgs/index.vue"),
-			meta: {},
+			meta: {
+				title: "自己设定",
+				top: false,
+			},
 		},
 	],
 };

@@ -6,10 +6,24 @@ export default {
 	component: layout,
 	children: [
 		{
+			path: "/taluopai",
+			name: "taluopai",
+			component: () => import("@/views/taluopai/index.vue"),
+			meta: {
+				title: "诡秘之主-塔罗牌大全",
+				order: 4,
+				name: "塔罗牌",
+				top: true,
+			},
+		},
+		{
 			path: "/taluopai/:id",
 			name: "taluopai",
 			component: () => import("@/views/taluopai/index.vue"),
-			meta: {},
+			meta: {
+				title: "xx塔罗牌",
+				top: false,
+			},
 		},
 	],
 };

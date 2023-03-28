@@ -8,8 +8,13 @@ export default {
 		{
 			path: "/",
 			name: "Welcome",
+			meta: {
+				title: "诡秘之主首页",
+				order: 1,
+				name: "首页",
+				top: true,
+			},
 			component: () => import("@/views/home/index.vue"),
-			meta: {},
 		},
 	],
 };

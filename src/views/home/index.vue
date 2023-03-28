@@ -1,18 +1,9 @@
 <script setup lang="ts">
-
 import gsap from 'gsap';
-
 import { onMounted } from "vue";
 // console.log(calendar.solar2lunar(2021, 3, 21));
 
-import { useRouter } from "vue-router";
-
-
 import Table from "@/components/home/table";
-
-const router = useRouter();
-
-
 
 onMounted(() => {
     setTimeout(() => {
