@@ -47,3 +47,16 @@ export interface organization {
  * @param tip 备注额外的添加、比如小心眼、敌对谁等小细节
  * */
 export interface organizations extends Array<organization> {}
+
+/**
+ * @param name 
+ * @param pic 
+ * @param ower 
+
+ * */
+export interface taluopai {
+	name: string;
+	pic: string;
+	ower: string;
+	way: Array[string];
+}
