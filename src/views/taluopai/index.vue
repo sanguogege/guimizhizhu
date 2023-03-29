@@ -17,71 +17,92 @@ const Circle: any = [];
 
 
 
+// function pathCircle() {
+//     let vr = 0.04, //每一帧转动的弧度值
+//         cos = Math.cos(vr), // 得到cos值
+//         sin = Math.sin(vr)// 得到sin值
+
+//     var x1 = ballX - centerX; //相对中心点的位置
+//     var y1 = ballY - centerY;
+
+//     var newX = x1 * cos - y1 * sin; //旋转一定角度后的位置
+//     var newY = y1 * cos + x1 * sin;
+
+//     ballX = centerX + newX; //更新球的位置
+//     ballY = centerY + newY;
+
+//     Circle.push({
+//         x: ballX,
+//         y: ballY
+//     })
+//     if (ballX >= BeginX && ballX <= EndX) {
+//         console.log("完成一周了");
+//         return
+//     }
+//     pathCircle();
+// }
+// // pathCircle()
+
+
+
+
 function pathCircle() {
-    let vr = 0.04, //每一帧转动的弧度值
-        cos = Math.cos(vr), // 得到cos值
-        sin = Math.sin(vr)// 得到sin值
+    let X = centerX, Y = centerY - circleR;
+    let i = 0, r = 100
+    setInterval(function () {
+        i = i + 1;
+        var radian = i * Math.PI / 180; //计算角度
+        var a = Math.sin(radian) * r;  //根据三角函数公式计算
+        var b = Math.cos(radian) * r; //根据三角形函数公式计算
+        let OX = X + a;
+        let OY = Y - b;
+        console.log(OX, OY);
+        gsap.to(".card ", { duration: 0.03, ease: "power2", x: OX, y: OY })
+    }, 10)
 
-    var x1 = ballX - centerX; //相对中心点的位置
-    var y1 = ballY - centerY;
-
-    var newX = x1 * cos - y1 * sin; //旋转一定角度后的位置
-    var newY = y1 * cos + x1 * sin;
-
-    ballX = centerX + newX; //更新球的位置
-    ballY = centerY + newY;
-
-    Circle.push({
-        x: ballX,
-        y: ballY
-    })
-    if (ballX >= BeginX && ballX <= EndX) {
-        console.log("完成一周了");
-        return
-    }
-    pathCircle();
 }
-pathCircle()
+
+
 
 onMounted(() => {
-    const line = gsap.timeline();
-    line.from(".card ", { duration: 3, ease: "power2", y: -1700 })
-    line.to(".card ", { duration: 3, ease: "power2", x: ballX, y: ballY })
-    Circle.forEach((e: any) => {
-        line.to(".card ", { duration: 0.02, ease: "power2", x: e.x, y: e.y, stagger: 1, rotation: 360 })
-    });
+    // const line = gsap.timeline();
+    // line.from(".card ", { duration: 3, ease: "power2", y: -1700 })
+    // line.to(".card ", { duration: 3, ease: "power2", x: ballX, y: ballY })
+    // Circle.forEach((e: any) => {
+    //     line.to(".card ", { duration: 0.01, ease: "power2", x: e.x, y: e.y, stagger: 1, rotateY: 360 })
+    // });
+    pathCircle()
 
 })
 </script>
 <template>
-    <div class="box">
-        <div>卡罗牌1</div>
-        <div>卡罗牌2</div>
-        <div>卡罗牌3</div>
-        <div>卡罗牌4</div>
-        <div>卡罗牌5</div>
-        <div>卡罗牌6</div>
-        <div>卡罗牌7</div>
-        <div>卡罗牌8</div>
-        <div>卡罗牌9</div>
-        <div>卡罗牌10</div>
-        <div>卡罗牌11</div>
-        <div>卡罗牌12</div>
-        <div>卡罗牌13</div>
-        <div>卡罗牌14</div>
-        <div>卡罗牌15</div>
-        <div>卡罗牌16</div>
-        <div>卡罗牌17</div>
-        <div>卡罗牌18</div>
-        <div>卡罗牌19</div>
-        <div>卡罗牌20</div>
-        <div>卡罗牌21</div>
-        <div>卡罗牌22</div>
-    </div>
+    <!-- <div class="box">
+                                                                                        <div>卡罗牌1</div>
+                                                                                        <div>卡罗牌2</div>
+                                                                                        <div>卡罗牌3</div>
+                                                                                        <div>卡罗牌4</div>
+                                                                                        <div>卡罗牌5</div>
+                                                                                        <div>卡罗牌6</div>
+                                                                                        <div>卡罗牌7</div>
+                                                                                        <div>卡罗牌8</div>
+                                                                                        <div>卡罗牌9</div>
+                                                                                        <div>卡罗牌10</div>
+                                                                                        <div>卡罗牌11</div>
+                                                                                        <div>卡罗牌12</div>
+                                                                                        <div>卡罗牌13</div>
+                                                                                        <div>卡罗牌14</div>
+                                                                                        <div>卡罗牌15</div>
+                                                                                        <div>卡罗牌16</div>
+                                                                                        <div>卡罗牌17</div>
+                                                                                        <div>卡罗牌18</div>
+                                                                                        <div>卡罗牌19</div>
+                                                                                        <div>卡罗牌20</div>
+                                                                                        <div>卡罗牌21</div>
+                                                                                        <div>卡罗牌22</div>
+                                                                                    </div> -->
     <div class="card">
         这是一卡片
     </div>
-
     <div class="aa" v-for="item in Circle" :style="{ left: item.x + 'px', top: item.y + 'px' }">
 
     </div>
