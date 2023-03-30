@@ -2,6 +2,7 @@ import { inject } from "vue";
 import { createRxDatabase, addRxPlugin } from "rxdb";
 import { RxDBMigrationPlugin } from "rxdb/plugins/migration";
 import { getRxStorageDexie } from "rxdb/plugins/storage-dexie";
+import { RxDBQueryBuilderPlugin } from "rxdb/plugins/query-builder";
 import { removeRxDatabase } from "rxdb";
 
 import schemas from "./schemas";
@@ -11,6 +12,7 @@ import isNewData from "@/utils/getversion";
 const KEY_DATABASE = Symbol("database");
 
 addRxPlugin(RxDBMigrationPlugin);
+addRxPlugin(RxDBQueryBuilderPlugin);
 
 const useDataBase = () => {
 	return inject(KEY_DATABASE);

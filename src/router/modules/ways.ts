@@ -1,23 +1,23 @@
 import layout from "@/layout/index.vue";
 
 export default {
-	path: "/sequence",
-	name: "sequence",
+	path: "/ways",
+	name: "ways",
 	component: layout,
 	children: [
 		{
-			path: "/sequence/:type",
-			name: "sequencetype",
-			component: () => import("@/views/sequence/index.vue"),
+			path: "/ways/:type",
+			name: "waystype",
+			component: () => import("@/views/ways/index.vue"),
 			meta: {
-				title: "XX途径",
+				title: "诡秘之主-XX途径",
 				top: false,
 			},
 		},
 		{
 			path: "/sequence/:type/:name",
 			name: "sequencename",
-			component: () => import("@/views/sequence/sequence.vue"),
+			component: () => import("@/views/ways/sequence.vue"),
 			meta: {
 				title: "XX途径xx等级",
 				top: false,

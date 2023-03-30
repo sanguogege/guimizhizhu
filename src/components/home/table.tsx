@@ -273,6 +273,9 @@ export default defineComponent({
 	async setup() {
 		// 使用数据库
 		const database: any = useDataBase();
+
+		const collections = database.collections;
+
 		// 获取指定表的数据list
 		const gatherDocument = await database.gather.find().exec();
 
