@@ -12,15 +12,15 @@
  * @param otherplace 其他、巨人王庭、白银城、月城
  * */
 export enum orgType {
-	god = "god",
-	outgod = "outgod",
-	angel = "angel",
-	light = "light",
-	religion = "religion",
-	official = "official",
-	conceal = "conceal",
-	family = "family",
-	nation = "nation",
-	clan = "clan",
-	otherplace = "otherplace",
+	god = "神祗教会",
+	outgod = "旧日|外神|星空",
+	angel = "八大天使之王",
+	light = "灵界七净光",
+	religion = "神祗教会",
+	official = "官方机构",
+	conceal = "隐秘组织",
+	family = "超凡家族",
+	nation = "世俗国家",
+	clan = "非凡氏族",
+	otherplace = "其他",
 }
