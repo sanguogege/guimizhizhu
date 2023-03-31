@@ -111,24 +111,22 @@ function CreatDom(data: any) {
 		return h(
 			<tr>
 				<td>
-					<RouterLink to={"/sequence/" + el.name}>
-						{el.power}
-					</RouterLink>
+					<RouterLink to={"/ways/" + el.name}>{el.power}</RouterLink>
 				</td>
 				<td>
-					<RouterLink to={"/sequence/" + el.name + "/" + el[9].name}>
+					<RouterLink to={"/ways/" + el.name + "/" + el[9].name}>
 						{el[9].name}
 					</RouterLink>
 				</td>
 				<td>
-					<RouterLink to={"/sequence/" + el.name + "/" + el[8].name}>
+					<RouterLink to={"/ways/" + el.name + "/" + el[8].name}>
 						{el[8].name}
 					</RouterLink>
 				</td>
 				<td>
 					<RouterLink
 						class={SetFontClass(el.name, el[7].num)}
-						to={"/sequence/" + el.name + "/" + el[7].name}
+						to={"/ways/" + el.name + "/" + el[7].name}
 					>
 						{el[7].name}
 					</RouterLink>
@@ -136,7 +134,7 @@ function CreatDom(data: any) {
 				<td>
 					<RouterLink
 						class={SetFontClass(el.name, el[6].num)}
-						to={"/sequence/" + el.name + "/" + el[6].name}
+						to={"/ways/" + el.name + "/" + el[6].name}
 					>
 						{el[6].name}
 					</RouterLink>
@@ -144,7 +142,7 @@ function CreatDom(data: any) {
 				<td>
 					<RouterLink
 						class={SetFontClass(el.name, el[5].num)}
-						to={"/sequence/" + el.name + "/" + el[5].name}
+						to={"/ways/" + el.name + "/" + el[5].name}
 					>
 						{el[5].name}
 					</RouterLink>
@@ -152,7 +150,7 @@ function CreatDom(data: any) {
 				<td class={SetBgClass(el.yuan.name, el.yuan.name)}>
 					<RouterLink
 						class={SetFontClass(el.name, el[4].num)}
-						to={"/sequence/" + el.name + "/" + el[4].name}
+						to={"/ways/" + el.name + "/" + el[4].name}
 					>
 						{el[4].name}
 					</RouterLink>
@@ -160,7 +158,7 @@ function CreatDom(data: any) {
 				<td class={SetBgClass(el.yuan.name)}>
 					<RouterLink
 						class={SetFontClass(el.name, el[3].num)}
-						to={"/sequence/" + el.name + "/" + el[3].name}
+						to={"/ways/" + el.name + "/" + el[3].name}
 					>
 						{el[3].name}
 					</RouterLink>
@@ -168,7 +166,7 @@ function CreatDom(data: any) {
 				<td class={SetBgClass(el.yuan.name)}>
 					<RouterLink
 						class={SetFontClass(el.name, el[2].num)}
-						to={"/sequence/" + el.name + "/" + el[2].name}
+						to={"/ways/" + el.name + "/" + el[2].name}
 					>
 						{el[2].name}
 					</RouterLink>
@@ -176,7 +174,7 @@ function CreatDom(data: any) {
 				<td class={SetBgClass(el.yuan.name)}>
 					<RouterLink
 						class={SetFontClass(el.name, el[1].num)}
-						to={"/sequence/" + el.name + "/" + el[1].name}
+						to={"/ways/" + el.name + "/" + el[1].name}
 					>
 						{el[1].name}
 					</RouterLink>
@@ -184,7 +182,7 @@ function CreatDom(data: any) {
 				<td class={SetBgClass(el.yuan.name)}>
 					<RouterLink
 						class={SetFontClass(el.name, el[0].num)}
-						to={"/sequence/" + el.name + "/" + el[0].name}
+						to={"/ways/" + el.name + "/" + el[0].name}
 					>
 						{el[0].name}
 					</RouterLink>

@@ -15,7 +15,7 @@ export default {
 			},
 		},
 		{
-			path: "/sequence/:type/:name",
+			path: "/ways/:type/:name",
 			name: "sequencename",
 			component: () => import("@/views/ways/sequence.vue"),
 			meta: {
