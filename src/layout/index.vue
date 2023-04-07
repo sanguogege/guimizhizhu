@@ -26,7 +26,6 @@ function refreshPage() {
             <a v-for="item in sideRouter" :href="base + item.path">{{ item.meta.name }}</a>
         </div>
     </div>
-    <!-- <button @click.once="update()">更新数据库</button> -->
     <div class="body">
         <RouterView />
     </div>
@@ -95,6 +94,6 @@ function refreshPage() {
 }
 
 .body {
-    margin-top: 80px;
+    margin-top: 100px;
 }
 </style>

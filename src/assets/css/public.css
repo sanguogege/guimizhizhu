@@ -1,7 +1,7 @@
 @import "base.css";
 
 :root {
-    --yonganzhihe-bg: rgba(53, 62, 79, 1);
+    --yonganzhihe-bg: rgba(53, 62, 79, 0.6);
     --hundunhai-bg: #2f74b9;
     --zhishihuangye-bg: #538232;
     --yuanbao-bg: #7030a0;

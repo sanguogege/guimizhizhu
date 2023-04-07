@@ -125,3 +125,15 @@ a:active,
 a:focus {
     text-decoration: none;
 }
+
+#app {
+    position: relative;
+    z-index: 999;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
