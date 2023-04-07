@@ -2,7 +2,7 @@
 import gsap from 'gsap';
 import { onMounted } from "vue";
 
-import app from '@/utils/canvas/stars';
+// import app from '@/utils/canvas/stars';
 
 import Table from "@/components/home/table";
 
