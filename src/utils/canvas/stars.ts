@@ -1,8 +1,8 @@
 import { createCanvas } from "@/utils/canvas";
 import { Texture, Sprite } from "pixi.js";
 
-export function createStartBg() {
-	const starbox = createCanvas();
+export function createStartBg(type?: string) {
+	const starbox = createCanvas(type);
 	if (!starbox) {
 		return;
 	}

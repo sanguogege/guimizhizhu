@@ -3,28 +3,22 @@ import { sideRouter } from "@/router/index"
 import gsap from 'gsap';
 import { onMounted } from 'vue';
 
-const base = import.meta.env.BASE_URL
-console.log(base);
 
-// onMounted(() => {
-//     const line = gsap.timeline();
-//     line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
-// })
+const base = import.meta.env.BASE_URL
+onMounted(() => {
+    const line = gsap.timeline();
+    line.from(".head ", { duration: 5, opacity: 0, ease: "power2", display: "flex", x: -600 })
+})
 
 </script>
 <template>
-    <!-- <div class="head">
-                        <div class="head_logo">
-                            <img class="img" src="@/assets/img/logo.png" alt="">
-                        </div>
-                        <div class="head_link">
-                            <a v-for="item in sideRouter" :href="base + item.path">{{ item.meta.name }}</a>
-                        </div>
-                    </div> -->
-    <div>
-        <a href="">1</a>
-        <a href="">2</a>
-        <a href="">3</a>
+    <div class="head">
+        <div class="head_logo">
+            <img class="img" src="@/assets/img/logo.png" alt="">
+        </div>
+        <div class="head_link">
+            <a v-for="item in sideRouter" :href="base + item.path">{{ item.meta.name }}</a>
+        </div>
     </div>
 </template>
 <style scoped>

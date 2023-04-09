@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import gsap from 'gsap';
 import { onMounted } from "vue";
-
 import { createStartBg } from '@/utils/canvas/stars';
-import { createCanvas } from '@/utils/canvas';
-
 import Table from "@/components/home/table";
 
+import canvasBgFun from '@/utils/watchcanvas';
 
-createStartBg()
+
+canvasBgFun(createStartBg)
 
 onMounted(() => {
     const line = gsap.timeline();

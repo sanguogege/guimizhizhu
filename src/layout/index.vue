@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router';
-import nav from "@/layout/components/nav.vue"
+import navbox from "@/layout/components/header.vue"
+import switchbg from "@/layout/components/changeBg.vue"
 
 </script>
 <template>
-    <div class="top">
-        <nav></nav>
-    </div>
+    <navbox class="top"></navbox>
+    <switchbg class="switchbg"></switchbg>
     <div class="body">
         <RouterView />
     </div>
@@ -16,6 +16,13 @@ import nav from "@/layout/components/nav.vue"
     position: absolute;
     top: 10px;
     left: 4px;
+}
+
+.switchbg {
+    position: absolute;
+    top: 10px;
+    right: 4px;
+    z-index: 999;
 }
 
 .body {

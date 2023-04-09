@@ -1,5 +1,4 @@
 import { Application } from "pixi.js";
-
 export function createCanvas(type = "canvas") {
 	if (type == "canvas") {
 		const app: any = new Application({
@@ -11,7 +10,9 @@ export function createCanvas(type = "canvas") {
 		return app;
 	} else {
 		const app: any = document.querySelector("canvas");
-		app.remove();
+		if (app) {
+			app.remove();
+		}
 		return;
 	}
 }
