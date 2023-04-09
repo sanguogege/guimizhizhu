@@ -2,10 +2,13 @@
 import gsap from 'gsap';
 import { onMounted } from "vue";
 
-// import app from '@/utils/canvas/stars';
+import { createStartBg } from '@/utils/canvas/stars';
+import { createCanvas } from '@/utils/canvas';
 
 import Table from "@/components/home/table";
 
+
+createStartBg()
 
 onMounted(() => {
     const line = gsap.timeline();
@@ -20,5 +23,9 @@ onMounted(() => {
 <style scoped>
 .tablebox {
     overflow: hidden;
+}
+
+.aa {
+    color: #fff;
 }
 </style>

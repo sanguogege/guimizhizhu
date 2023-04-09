@@ -1,12 +1,9 @@
-
 import { useStorage, createGlobalState } from "@vueuse/core";
 
 const UserGlobalStore = createGlobalState(() => {
-    return {
-        IsDb: useStorage("dbstate", false),
-    }
-})
+	return {
+		pagetype: useStorage("pagetype", "canvas"),
+	};
+});
 
-export {
-    UserGlobalStore
-}
+export { UserGlobalStore };
