@@ -16,19 +16,23 @@
     height: 1px;
     transition: all 0.4s ease-in-out;
     border: 1px solid var(--borer-color);
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable td a {
     color: var(--default-color);
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable thead {
     color: var(--primary-color);
     background-color: var(--thead-bg);
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable {
     background-color: var(--primary-bg);
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable thead td {
