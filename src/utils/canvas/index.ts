@@ -7,12 +7,14 @@ export function createCanvas(type = "canvas") {
 			resolution: 1,
 		});
 		document.body.appendChild(app.view);
+		document.getElementsByTagName("html")[0].className = "canvas";
 		return app;
 	} else {
 		const app: any = document.querySelector("canvas");
 		if (app) {
 			app.remove();
 		}
+		document.getElementsByTagName("html")[0].className = "";
 		return;
 	}
 }

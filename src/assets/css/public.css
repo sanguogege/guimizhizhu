@@ -27,20 +27,23 @@
     background-color: var(--default-bg);
 }
 
-.hsa {
-    --default-clolr: #222;
-    --yonganzhihe-bg: #353e4f;
-    --hundunhai-bg: #2f74b9;
-    --zhishihuangye-bg: #538232;
-    --yuanbao-bg: #7030a0;
-    --shixuzhiguo-bg: #bf0200;
+.canvas {
+    --default-bg: #ce4d4d;
+    --primary-bg: transparent;
+    --thead-bg: transparent;
+    --yonganzhihe-bg: rgba(53, 62, 79, 0.5);
+    --hundunhai-bg: rgba(47, 116, 185, 0.5);
+    --zhishihuangye-bg: rgba(83, 130, 50, 0.5);
+    --yuanbao-bg: rgba(112, 48, 160, 0.5);
+    --shixuzhiguo-bg: rgba(191, 2, 0, 0.5);
     --zaihuozhicheng-bg: #156c59;
-    --muchao-bg: #057c08;
-    --anyingshijie-bg: #bf8e03;
+    --muchao-bg: rgba(5, 124, 8, 0.5);
+    --anyingshijie-bg: rgba(191, 142, 3, 0.5);
+    --td-hover-bg: #cdacec;
     --primary-color: #fff;
-    --borer-color: #ebeef5;
+    --default-color: #fff;
+    --borer-color: #202020;
     --female-color: #e874f3;
     --male-color: #b10900;
-    --td-hover-bg: #cdacec;
     --td-hover-color: #0004fa !important;
 }

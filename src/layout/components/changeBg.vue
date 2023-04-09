@@ -7,7 +7,6 @@ function switchPage(type: string) {
     const now = user.pagetype;
     if (now.value !== type) {
         now.value = type
-        document.getElementsByTagName('html')[0].className = 'snow-container';
     }
 }
 
