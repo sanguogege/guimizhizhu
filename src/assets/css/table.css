@@ -2,19 +2,18 @@
     width: 1600px;
     margin: auto;
     border-collapse: collapse;
+    background-color: var(--primary-bg);
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable tr {
     width: 100%;
 }
 
-.sequencetable tr,
-.sequencetable td,
-.sequencetable th {
+.sequencetable td {
     font-size: 14px;
-    text-align: center;
     height: 1px;
-    transition: all 0.4s ease-in-out;
+    text-align: center;
     border: 1px solid var(--borer-color);
     transition: all 0.4s ease-in-out;
 }
@@ -25,17 +24,13 @@
 }
 
 .sequencetable thead {
-    color: var(--primary-color);
     background-color: var(--thead-bg);
     transition: all 0.4s ease-in-out;
 }
 
-.sequencetable {
-    background-color: var(--primary-bg);
-    transition: all 0.4s ease-in-out;
-}
-
 .sequencetable thead td {
+    color: var(--primary-color);
+    transition: all 0.4s ease-in-out;
     padding: 16px 0;
 }
 
@@ -45,22 +40,27 @@
     font-weight: bold;
 }
 
-.sequencetable tbody td:hover {
-    cursor: pointer;
-    background-color: var(--td-hover-bg);
-}
-
-.sequencetable tbody td:hover,
-.sequencetable tbody td a:hover {
-    color: var(--td-hover-color);
-}
-
 .sequencetable td a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s ease-in-out;
     padding: 5px 6px;
+}
+
+.sequencetable tbody td:hover {
+    cursor: pointer;
+    background-color: var(--td-hover-bg);
+}
+
+.sequencetable tbody td a:hover {
+    color: var(--td-hover-color);
+}
+
+.sequencetable tfoot td {
+    color: var(--default-color);
+    padding: 5px 0;
+    transition: all 0.4s ease-in-out;
 }
 
 .sequencetable td a.female {
@@ -103,6 +103,31 @@
     background-color: var(--anyingshijie-bg);
 }
 
+.sequencetable .lowpower {
+    background-color: var(--hundunhai-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .centerpower {
+    background-color: var(--zhishihuangye-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .heightpower {
+    background-color: var(--muchao-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .anglepower {
+    background-color: var(--anyingshijie-bg);
+    color: var(--primary-color);
+}
+
+.sequencetable .zeropower {
+    background-color: var(--shixuzhiguo-bg);
+    color: var(--primary-color);
+}
+
 .sequencetable .yonganzhihe a,
 .sequencetable .hundunhai a,
 .sequencetable .zhishihuangye a,
@@ -110,7 +135,6 @@
 .sequencetable .shixuzhiguo a,
 .sequencetable .anyingshijie a,
 .sequencetable .zaihuozhicheng a,
-.sequencetable .anyingshijie a,
 .sequencetable .muchao a,
 .sequencetable .zaihuozhicheng a {
     color: var(--primary-color);

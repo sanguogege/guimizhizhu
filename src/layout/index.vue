@@ -13,19 +13,19 @@ import switchbg from "@/layout/components/changeBg.vue"
 </template>
 <style scoped>
 .top {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 4px;
 }
 
 .switchbg {
-    position: absolute;
+    position: fixed;
     top: 10px;
-    right: 4px;
+    right: 10px;
     z-index: 999;
 }
 
 .body {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 </style>

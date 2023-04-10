@@ -18,7 +18,7 @@ function switchPage(type: string) {
         <div class="boxcnt">
             <span @click="switchPage('best')">性能模式</span>
             <span @click="switchPage('normal')">普通模式</span>
-            <span @click="switchPage('canvas')">最佳模式</span>
+            <span @click="switchPage('canvas')">观赏模式</span>
         </div>
     </div>
 </template>

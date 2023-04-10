@@ -28,7 +28,7 @@
 }
 
 .canvas {
-    --default-bg: #ce4d4d;
+    --default-bg: transparent;
     --primary-bg: transparent;
     --thead-bg: transparent;
     --yonganzhihe-bg: rgba(53, 62, 79, 0.5);

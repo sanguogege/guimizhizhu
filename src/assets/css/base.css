@@ -95,7 +95,8 @@ h4,
 h5,
 h6 {
     -webkit-text-size-adjust: none;
-    font-weight: normal
+    font-weight: normal;
+
 }
 
 article,
@@ -124,6 +125,10 @@ a:hover,
 a:active,
 a:focus {
     text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 #app {

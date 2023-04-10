@@ -303,6 +303,34 @@ export default defineComponent({
 					</tr>
 				</thead>
 				<tbody>{dom}</tbody>
+				<tfoot>
+					<tr>
+						<td>序列强度</td>
+						<td class="lowpower" colspan="2">
+							低序列
+						</td>
+						<td class="centerpower" colspan="3">
+							中序列
+						</td>
+						<td class="heightpower" colspan="2">
+							圣者
+						</td>
+						<td class="anglepower" colspan="2">
+							天使
+						</td>
+						<td class="zeropower">神灵</td>
+					</tr>
+					<tr>
+						<td colspan="16">
+							其他:三支柱为“上帝、全知全能者”、“诡秘之主、时空之王”、“堕落母神、邪恶之始”。若“永恒之暗、万物奇点”容纳了“灾祸之城、根源之祸”则会成为第四个支柱，但那会导致宇宙不可逆转的走向衰亡。黑夜途径的半神可以转换到魔女途径。
+						</td>
+					</tr>
+					<tr>
+						<td colspan="16">
+							表注:可互换途径同属一个源质。可互换序列由同色背景色标出。神灵/天使之王栏中。蓝色为唯一性、白色为真神、浅黄为天使之王、绿色为权柄获取。粉色为阴性生物。红色为阳性生物。
+						</td>
+					</tr>
+				</tfoot>
 			</table>
 		);
 	},
